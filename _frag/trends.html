@@ -1,0 +1,355 @@
+<!-- ============================================================
+     屏1 · 趋势首页（偏离度卡片）
+     ============================================================ -->
+<article class="device"
+         data-caption="趋势首页 · 偏离度卡片"
+         data-nav="none"
+         data-tab="trends"
+         data-fab="true"
+         data-theme="light">
+  <div class="screen-pad fade">
+
+    <!-- 顶栏：日历 / 头像（与首页一致） -->
+    <div style="display:flex;align-items:center;gap:14px;padding-top:6px;">
+      <div style="flex:1"></div>
+      <div style="color:#2F3337"><svg style="width:22px;height:22px"><use href="#i-calendar"/></svg></div>
+      <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#8FA0F5,#3C4FC1);display:flex;align-items:center;justify-content:center;color:#fff"><svg style="width:22px;height:22px"><use href="#i-user"/></svg></div>
+    </div>
+
+    <!-- 标题「趋势」+ 右侧编辑图标 -->
+    <div style="display:flex;align-items:center;margin-top:10px;">
+      <div style="font-size:28px;font-weight:800;color:#2F3337;">趋势</div>
+      <div style="flex:1"></div>
+      <div style="color:#586298;"><svg style="width:22px;height:22px"><use href="#i-edit"/></svg></div>
+    </div>
+
+    <!-- ── 卡1 生命体征（状态带 + 指标图标行）── -->
+    <div class="bg-white egoshadow" style="border-radius:16px;padding:16px;margin-top:16px;">
+      <div style="display:flex;align-items:center;">
+        <div style="font-size:16px;font-weight:700;color:#2F3337;">生命体征</div>
+        <div style="flex:1"></div>
+        <svg style="width:16px;height:16px;color:#C0C4CC"><use href="#i-chevron"/></svg>
+      </div>
+      <div style="font-size:13px;color:#59606B;margin-top:6px;">
+        静息心率 <span style="color:#F5A623;font-weight:600;">偏高 ↑</span> · 体温 <span style="color:#F06B6B;font-weight:600;">偏低 ↓</span>
+      </div>
+
+      <!-- 状态带：上线=过高 / 灰带=正常 / 下线=过低 -->
+      <div style="position:relative;height:116px;margin-top:14px;">
+        <div style="position:absolute;left:0;right:0;top:14px;bottom:14px;background:#EFEFEF;border-radius:8px;"></div>
+        <div style="position:absolute;left:0;right:0;top:13px;height:1px;background:#C9CDD2;"></div>
+        <div style="position:absolute;left:0;right:0;bottom:13px;height:1px;background:#C9CDD2;"></div>
+        <div style="position:absolute;inset:0;display:flex;">
+          <!-- 静息心率：过高 → ⚠ 贴顶 -->
+          <div style="flex:1;display:flex;align-items:flex-start;justify-content:center;">
+            <svg viewBox="0 0 24 24" style="width:22px;height:22px;margin-top:2px;color:#E85D5D"><path d="M12 3 L22 20 H2 Z" fill="currentColor"/><rect x="11" y="9" width="2" height="6" fill="#fff" rx="1"/><rect x="11" y="16.5" width="2" height="2" fill="#fff" rx="1"/></svg>
+          </div>
+          <!-- 呼吸频率：正常 → ✓ 居中 -->
+          <div style="flex:1;display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 24 24" style="width:22px;height:22px;color:#3C4FC1"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M7 12.5 L10.5 16 L17 8.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <!-- 血氧：正常 → ✓ 居中略上 -->
+          <div style="flex:1;display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 24 24" style="width:22px;height:22px;margin-top:-12px;color:#3C4FC1"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M7 12.5 L10.5 16 L17 8.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <!-- 体温：过低 → ⚠ 贴底 -->
+          <div style="flex:1;display:flex;align-items:flex-end;justify-content:center;">
+            <svg viewBox="0 0 24 24" style="width:22px;height:22px;margin-bottom:2px;color:#E85D5D"><path d="M12 3 L22 20 H2 Z" fill="currentColor"/><rect x="11" y="9" width="2" height="6" fill="#fff" rx="1"/><rect x="11" y="16.5" width="2" height="2" fill="#fff" rx="1"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- 指标图标行 -->
+      <div style="display:flex;margin-top:14px;">
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:rgba(240,107,107,.15);color:#F06B6B;display:flex;align-items:center;justify-content:center;"><svg style="width:18px;height:18px"><use href="#i-heart"/></svg></div>
+          <div style="font-size:11px;color:#59606B;">静息心率</div>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:rgba(75,200,126,.15);color:#4BC87E;display:flex;align-items:center;justify-content:center;"><svg style="width:18px;height:18px"><use href="#i-lungs"/></svg></div>
+          <div style="font-size:11px;color:#59606B;">呼吸频率</div>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:rgba(91,141,239,.15);color:#5B8DEF;display:flex;align-items:center;justify-content:center;"><svg style="width:18px;height:18px"><use href="#i-drop"/></svg></div>
+          <div style="font-size:11px;color:#59606B;">血氧</div>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:rgba(232,138,60,.15);color:#E88A3C;display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;color:#E88A3C"><path d="M14 13.5V5a2 2 0 0 0-4 0v8.5a4 4 0 1 0 4 0Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="17" r="1.6" fill="currentColor"/></svg>
+          </div>
+          <div style="font-size:11px;color:#59606B;">体温</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 卡2 压力（大数值 + 分级柱图）── -->
+    <div class="bg-white egoshadow" style="border-radius:16px;padding:16px;margin-top:14px;">
+      <div style="display:flex;align-items:center;">
+        <div style="font-size:16px;font-weight:700;color:#2F3337;">压力</div>
+        <div style="flex:1"></div>
+        <svg style="width:16px;height:16px;color:#C0C4CC"><use href="#i-chevron"/></svg>
+      </div>
+      <div style="display:flex;align-items:flex-end;gap:10px;margin-top:8px;">
+        <div style="font-size:34px;font-weight:800;color:#2F3337;line-height:1;">65</div>
+        <div style="font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:rgba(245,166,35,.12);color:#F5A623;margin-bottom:4px;">偏高 ↑</div>
+      </div>
+      <div style="font-size:13px;color:#59606B;margin-top:6px;">较基线偏高，午后有一段较长高压时段</div>
+
+      <!-- 分级柱图（一日 24h，冷→暖 + 活动绿） -->
+      <div style="display:flex;align-items:flex-end;gap:2px;height:72px;margin-top:14px;">
+        <div style="flex:1;height:18px;background:#9FE3FF;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:15px;background:#9FE3FF;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:14px;background:#9FE3FF;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:16px;background:#9FE3FF;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:15px;background:#9FE3FF;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:22px;background:#4A7BFF;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:34px;background:#4A7BFF;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:40px;background:#4A7BFF;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:44px;background:#F08080;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:50px;background:#F08080;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:46px;background:#F08080;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:38px;background:#4A7BFF;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:52px;background:#F08080;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:60px;background:#B71C1C;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:56px;background:#B71C1C;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:44px;background:#F08080;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:36px;background:#4A7BFF;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:58px;background:#4BC87E;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:54px;background:#4BC87E;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:40px;background:#F08080;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:30px;background:#4A7BFF;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:20px;background:#9FE3FF;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:16px;background:#9FE3FF;border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:15px;background:#9FE3FF;border-radius:2px 2px 0 0"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:10px;color:#9AA09F;margin-top:6px;">
+        <span>00</span><span>06</span><span>12</span><span>18</span><span>24</span>
+      </div>
+    </div>
+
+    <!-- ── 卡3 身体电量（大数值 + 曲线 + 典型范围带）── -->
+    <div class="bg-white egoshadow" style="border-radius:16px;padding:16px;margin-top:14px;">
+      <div style="display:flex;align-items:center;">
+        <div style="font-size:16px;font-weight:700;color:#2F3337;">身体电量</div>
+        <div style="flex:1"></div>
+        <svg style="width:16px;height:16px;color:#C0C4CC"><use href="#i-chevron"/></svg>
+      </div>
+      <div style="display:flex;align-items:flex-end;gap:10px;margin-top:8px;">
+        <div style="font-size:34px;font-weight:800;color:#2F3337;line-height:1;">78</div>
+        <div style="font-size:13px;font-weight:600;color:#4BC87E;margin-bottom:5px;">电量充足</div>
+      </div>
+
+      <svg viewBox="0 0 300 96" style="width:100%;height:96px;margin-top:12px;" preserveAspectRatio="none">
+        <!-- 典型范围带 -->
+        <rect x="0" y="34" width="300" height="26" fill="#D0D0D0" opacity="0.25"/>
+        <!-- 电量曲线填充 -->
+        <path d="M0,30 C40,14 70,10 100,20 C140,34 170,52 200,58 C230,64 265,50 300,44 L300,96 L0,96 Z" fill="#5B8DEF" opacity="0.14"/>
+        <!-- 电量曲线 -->
+        <polyline points="0,30 40,17 70,12 100,20 140,34 170,50 200,58 230,63 265,50 300,44" fill="none" stroke="#5B8DEF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="300" cy="44" r="3.6" fill="#5B8DEF"/>
+      </svg>
+      <div style="display:flex;align-items:center;gap:6px;margin-top:2px;">
+        <div style="width:16px;height:10px;border-radius:2px;background:#D0D0D0;opacity:.45"></div>
+        <span style="font-size:11px;color:#9AA09F;">典型范围</span>
+      </div>
+    </div>
+
+    <!-- ── 卡4 体温趋势（最近/基线 + 折线 + P10-P90 带）── -->
+    <div class="bg-white egoshadow" style="border-radius:16px;padding:16px;margin-top:14px;">
+      <div style="display:flex;align-items:center;">
+        <div style="font-size:16px;font-weight:700;color:#2F3337;">体温趋势</div>
+        <div style="flex:1"></div>
+        <svg style="width:16px;height:16px;color:#C0C4CC"><use href="#i-chevron"/></svg>
+      </div>
+      <div style="display:flex;gap:40px;margin-top:12px;">
+        <div>
+          <div style="font-size:12px;color:#59606B;">最近</div>
+          <div style="margin-top:2px;"><span style="font-size:26px;font-weight:800;color:#2F3337;">36.4</span><span style="font-size:12px;color:#59606B;">°C</span></div>
+        </div>
+        <div>
+          <div style="font-size:12px;color:#59606B;">基线</div>
+          <div style="margin-top:2px;"><span style="font-size:26px;font-weight:800;color:#2F3337;">36.2</span><span style="font-size:12px;color:#59606B;">°C</span></div>
+        </div>
+      </div>
+      <div style="font-size:13px;color:#59606B;margin-top:8px;">近 7 天略高于基线 <span style="color:#F5A623;font-weight:600;">+0.2°C</span></div>
+
+      <svg viewBox="0 0 300 90" style="width:100%;height:90px;margin-top:12px;" preserveAspectRatio="none">
+        <!-- P10-P90 参考带 -->
+        <rect x="0" y="36" width="300" height="26" fill="#D0D0D0" opacity="0.25"/>
+        <polyline points="0,52 50,48 100,50 150,42 200,44 250,36 300,34" fill="none" stroke="#5B8DEF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="300" cy="34" r="3.6" fill="#5B8DEF"/>
+      </svg>
+      <div style="display:flex;justify-content:space-between;font-size:10px;color:#9AA09F;margin-top:2px;">
+        <span>7/8</span><span>7/10</span><span>7/12</span><span>7/14</span>
+      </div>
+    </div>
+
+    <!-- 编辑趋势卡片 次按钮 -->
+    <div style="display:flex;justify-content:center;margin-top:22px;">
+      <div style="display:inline-flex;align-items:center;gap:6px;height:44px;padding:0 24px;border-radius:999px;background:#EFEFEF;color:#59606B;font-size:15px;font-weight:600;">
+        <svg style="width:16px;height:16px"><use href="#i-plus"/></svg>
+        编辑趋势卡片
+      </div>
+    </div>
+
+  </div>
+</article>
+
+
+<!-- ============================================================
+     屏2 · 睡眠趋势详情
+     ============================================================ -->
+<article class="device"
+         data-caption="睡眠趋势 · 详情"
+         data-nav="← 睡眠趋势"
+         data-tab="none"
+         data-fab="false"
+         data-theme="light">
+  <div class="screen-pad fade">
+
+    <!-- Hero：近 7 天日均 + 同比 -->
+    <div style="margin-top:6px;">
+      <div style="font-size:13px;color:#59606B;">近 7 天日均睡眠时长</div>
+      <div style="display:flex;align-items:flex-end;gap:12px;margin-top:8px;">
+        <div style="display:flex;align-items:baseline;">
+          <span style="font-size:40px;font-weight:800;color:#2F3337;line-height:1;">7</span>
+          <span style="font-size:17px;color:#2F3337;margin:0 2px;">小时</span>
+          <span style="font-size:40px;font-weight:800;color:#2F3337;line-height:1;">12</span>
+          <span style="font-size:17px;color:#2F3337;margin-left:2px;">分钟</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:3px;font-size:13px;font-weight:600;color:#4BC87E;margin-bottom:5px;">
+          <svg style="width:13px;height:13px"><use href="#i-arrow-up"/></svg>18 分 / 较上周
+        </div>
+      </div>
+    </div>
+
+    <!-- 大趋势图卡：睡眠分期堆叠柱 + P10-P90 带 + 周几坐标 -->
+    <div class="bg-white egoshadow" style="border-radius:18px;padding:18px 16px;margin-top:18px;">
+      <div style="display:flex;align-items:center;">
+        <div style="font-size:15px;font-weight:700;color:#2F3337;">每日睡眠分期</div>
+        <div style="flex:1"></div>
+        <div style="font-size:12px;color:#9AA09F;">7 月 8 日 – 7 月 14 日</div>
+      </div>
+
+      <!-- 柱图绘制区 -->
+      <div style="position:relative;height:158px;margin-top:16px;">
+        <!-- P10-P90 典型总时长参考带 -->
+        <div style="position:absolute;left:0;right:0;bottom:120px;height:21px;background:#D0D0D0;opacity:.28;border-radius:3px;"></div>
+        <!-- 7 根堆叠柱 -->
+        <div style="position:absolute;inset:0;display:flex;align-items:flex-end;gap:10px;">
+          <!-- 每柱由下到上：深睡 / 核心 / 快速眼动 / 清醒 -->
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;">
+            <div style="height:9px;background:#BFD2EE;border-radius:3px 3px 0 0;"></div>
+            <div style="height:25px;background:#F09AAE;"></div>
+            <div style="height:69px;background:#5B7BD8;"></div>
+            <div style="height:23px;background:#1F2C8E;"></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;">
+            <div style="height:9px;background:#BFD2EE;border-radius:3px 3px 0 0;"></div>
+            <div style="height:27px;background:#F09AAE;"></div>
+            <div style="height:73px;background:#5B7BD8;"></div>
+            <div style="height:24px;background:#1F2C8E;"></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;">
+            <div style="height:8px;background:#BFD2EE;border-radius:3px 3px 0 0;"></div>
+            <div style="height:23px;background:#F09AAE;"></div>
+            <div style="height:64px;background:#5B7BD8;"></div>
+            <div style="height:21px;background:#1F2C8E;"></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;">
+            <div style="height:10px;background:#BFD2EE;border-radius:3px 3px 0 0;"></div>
+            <div style="height:28px;background:#F09AAE;"></div>
+            <div style="height:76px;background:#5B7BD8;"></div>
+            <div style="height:25px;background:#1F2C8E;"></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;">
+            <div style="height:8px;background:#BFD2EE;border-radius:3px 3px 0 0;"></div>
+            <div style="height:24px;background:#F09AAE;"></div>
+            <div style="height:67px;background:#5B7BD8;"></div>
+            <div style="height:22px;background:#1F2C8E;"></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;">
+            <div style="height:10px;background:#BFD2EE;border-radius:3px 3px 0 0;"></div>
+            <div style="height:29px;background:#F09AAE;"></div>
+            <div style="height:79px;background:#5B7BD8;"></div>
+            <div style="height:26px;background:#1F2C8E;"></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;">
+            <div style="height:9px;background:#BFD2EE;border-radius:3px 3px 0 0;"></div>
+            <div style="height:27px;background:#F09AAE;"></div>
+            <div style="height:75px;background:#5B7BD8;"></div>
+            <div style="height:24px;background:#1F2C8E;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 周几坐标 -->
+      <div style="display:flex;gap:10px;margin-top:8px;">
+        <div style="flex:1;text-align:center;font-size:11px;color:#59606B;">一</div>
+        <div style="flex:1;text-align:center;font-size:11px;color:#59606B;">二</div>
+        <div style="flex:1;text-align:center;font-size:11px;color:#59606B;">三</div>
+        <div style="flex:1;text-align:center;font-size:11px;color:#59606B;">四</div>
+        <div style="flex:1;text-align:center;font-size:11px;color:#59606B;">五</div>
+        <div style="flex:1;text-align:center;font-size:11px;color:#59606B;">六</div>
+        <div style="flex:1;text-align:center;font-size:11px;color:#2F3337;font-weight:700;">日</div>
+      </div>
+
+      <!-- legend -->
+      <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;">
+        <div style="display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#BFD2EE;"></span><span style="font-size:11px;color:#59606B;">清醒时间</span></div>
+        <div style="display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#F09AAE;"></span><span style="font-size:11px;color:#59606B;">快速眼动</span></div>
+        <div style="display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#5B7BD8;"></span><span style="font-size:11px;color:#59606B;">核心睡眠</span></div>
+        <div style="display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#1F2C8E;"></span><span style="font-size:11px;color:#59606B;">深度睡眠</span></div>
+      </div>
+    </div>
+
+    <!-- 分区小标题 -->
+    <div style="font-size:13px;font-weight:600;color:#9AA09F;margin:22px 4px 10px;">睡眠质量</div>
+
+    <!-- 3 个 segment 卡 -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
+      <!-- 深睡占比 -->
+      <div class="bg-white egoshadow" style="border-radius:16px;padding:14px 12px;">
+        <div style="font-size:12px;color:#59606B;">深睡占比</div>
+        <div style="margin-top:6px;"><span style="font-size:22px;font-weight:800;color:#2F3337;">18</span><span style="font-size:12px;color:#59606B;">%</span></div>
+        <svg viewBox="0 0 80 30" style="width:100%;height:28px;margin-top:8px;" preserveAspectRatio="none">
+          <polyline points="0,22 16,20 32,23 48,15 64,17 80,10" fill="none" stroke="#1F2C8E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div style="font-size:11px;font-weight:600;color:#4BC87E;margin-top:6px;">↑ 较上周 +2%</div>
+      </div>
+
+      <!-- 入睡时长 -->
+      <div class="bg-white egoshadow" style="border-radius:16px;padding:14px 12px;">
+        <div style="font-size:12px;color:#59606B;">入睡时长</div>
+        <div style="margin-top:6px;"><span style="font-size:22px;font-weight:800;color:#2F3337;">14</span><span style="font-size:12px;color:#59606B;">分</span></div>
+        <svg viewBox="0 0 80 30" style="width:100%;height:28px;margin-top:8px;" preserveAspectRatio="none">
+          <polyline points="0,10 16,14 32,12 48,18 64,16 80,22" fill="none" stroke="#5B8DEF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div style="font-size:11px;font-weight:600;color:#4BC87E;margin-top:6px;">入睡较快</div>
+      </div>
+
+      <!-- 睡眠规律性 -->
+      <div class="bg-white egoshadow" style="border-radius:16px;padding:14px 12px;">
+        <div style="font-size:12px;color:#59606B;">睡眠规律性</div>
+        <div style="margin-top:6px;"><span style="font-size:22px;font-weight:800;color:#2F3337;">82</span><span style="font-size:12px;color:#59606B;">分</span></div>
+        <svg viewBox="0 0 80 30" style="width:100%;height:28px;margin-top:8px;" preserveAspectRatio="none">
+          <polyline points="0,16 16,14 32,15 48,13 64,14 80,12" fill="none" stroke="#4BC87E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div style="font-size:11px;font-weight:700;color:#4BC87E;margin-top:6px;">作息规律</div>
+      </div>
+    </div>
+
+    <!-- 深睡时长 segment（宽卡，补充节律描述）-->
+    <div class="bg-white egoshadow" style="border-radius:16px;padding:16px;margin-top:12px;">
+      <div style="display:flex;align-items:center;">
+        <div style="width:34px;height:34px;border-radius:50%;background:rgba(31,44,142,.14);color:#1F2C8E;display:flex;align-items:center;justify-content:center;"><svg style="width:18px;height:18px"><use href="#i-moon"/></svg></div>
+        <div style="margin-left:12px;flex:1;">
+          <div style="font-size:14px;font-weight:700;color:#2F3337;">深睡时长稳定</div>
+          <div style="font-size:12px;color:#59606B;margin-top:2px;">近 7 天日均 1 小时 18 分，与基线持平</div>
+        </div>
+        <div style="text-align:right;"><span style="font-size:20px;font-weight:800;color:#2F3337;">1h18m</span></div>
+      </div>
+    </div>
+
+  </div>
+</article>

@@ -1,0 +1,397 @@
+<!-- ════════════════ 屏1 · 用药疗程详情（当前疗程总览） ════════════════ -->
+<article class="device"
+         data-caption="用药疗程详情 · 布洛芬缓释胶囊"
+         data-nav="← 用药疗程"
+         data-tab="none"
+         data-fab="false"
+         data-theme="light">
+  <div class="screen-pad fade">
+
+    <!-- 当前疗程 hero 卡：药名 + 剂量 + 依从性环 -->
+    <div class="bg-white egoshadow" style="border-radius:18px;padding:16px;">
+      <div style="display:flex;align-items:center;gap:13px;">
+        <div style="width:46px;height:46px;border-radius:13px;background:rgba(60,79,193,.1);color:#3C4FC1;display:flex;align-items:center;justify-content:center;flex:none;">
+          <svg style="width:26px;height:26px"><use href="#i-pill"/></svg>
+        </div>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:19px;font-weight:800;color:#2F3337;">布洛芬缓释胶囊</div>
+          <div style="font-size:13px;color:#59606B;margin-top:3px;">400mg · 每日 2 次 · 短期处方药</div>
+        </div>
+        <!-- 依从性环 -->
+        <div style="position:relative;width:70px;height:70px;flex:none;">
+          <svg width="70" height="70" viewBox="0 0 70 70" style="transform:rotate(-90deg)">
+            <circle cx="35" cy="35" r="30" fill="none" stroke="#EFEFEF" stroke-width="7"/>
+            <circle cx="35" cy="35" r="30" fill="none" stroke="#4BC87E" stroke-width="7" stroke-linecap="round"
+                    stroke-dasharray="188.5" stroke-dashoffset="26.9"/>
+          </svg>
+          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+            <div style="font-size:17px;font-weight:800;color:#2F3337;line-height:1;">86<span style="font-size:11px;">%</span></div>
+            <div style="font-size:9px;color:#9AA09F;margin-top:1px;">依从性</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="height:1px;background:#F0F0F0;margin:14px 0 12px;"></div>
+
+      <div style="display:flex;align-items:center;">
+        <span style="font-size:12px;font-weight:700;padding:4px 11px;border-radius:999px;background:rgba(75,200,126,.12);color:#4BC87E;">正在服用 · 第 12 天</span>
+        <div style="flex:1"></div>
+        <div style="font-size:12px;color:#7C838D;">已服 <b style="color:#2F3337;font-weight:700">12</b>/14 天 · 起药 7月1日</div>
+      </div>
+    </div>
+
+    <!-- 用药时间线 -->
+    <div style="font-size:18px;font-weight:800;color:#2F3337;margin:24px 4px 12px;">用药时间线</div>
+    <div class="bg-white egoshadow" style="border-radius:18px;padding:20px;">
+      <!-- 起点 -->
+      <div style="display:flex;gap:14px;">
+        <div style="display:flex;flex-direction:column;align-items:center;width:14px;">
+          <div style="width:12px;height:12px;border-radius:50%;background:#4BC87E;"></div>
+          <div style="flex:1;width:1px;border-left:1.5px dashed #C0C4CC;min-height:26px;margin:2px 0;"></div>
+        </div>
+        <div style="padding-bottom:18px;">
+          <div style="font-size:15px;font-weight:600;color:#2F3337;">开始服药</div>
+          <div style="font-size:13px;color:#59606B;margin-top:3px;">7月1日</div>
+        </div>
+      </div>
+      <!-- 症状 -->
+      <div style="display:flex;gap:14px;">
+        <div style="display:flex;flex-direction:column;align-items:center;width:14px;">
+          <div style="width:12px;height:12px;border-radius:50%;background:#3C4FC1;"></div>
+          <div style="flex:1;width:1px;border-left:1.5px dashed #C0C4CC;min-height:26px;margin:2px 0;"></div>
+        </div>
+        <div style="padding-bottom:18px;">
+          <div style="font-size:15px;font-weight:600;color:#2F3337;">头痛（记录）</div>
+          <div style="font-size:13px;color:#59606B;margin-top:3px;">7月4日 · 第 4 天</div>
+        </div>
+      </div>
+      <!-- 自测 -->
+      <div style="display:flex;gap:14px;">
+        <div style="display:flex;flex-direction:column;align-items:center;width:14px;">
+          <div style="width:12px;height:12px;border-radius:50%;background:#3C4FC1;"></div>
+          <div style="flex:1;width:1px;border-left:1.5px dashed #C0C4CC;min-height:26px;margin:2px 0;"></div>
+        </div>
+        <div style="padding-bottom:18px;">
+          <div style="font-size:15px;font-weight:600;color:#2F3337;">血压自测 128/82</div>
+          <div style="font-size:13px;color:#59606B;margin-top:3px;">7月7日 · 第 7 天</div>
+        </div>
+      </div>
+      <!-- 今天 -->
+      <div style="display:flex;gap:14px;">
+        <div style="width:14px;display:flex;justify-content:center;">
+          <div style="width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid #3C4FC1;"></div>
+        </div>
+        <div>
+          <div style="font-size:15px;font-weight:600;color:#2F3337;">今天</div>
+          <div style="font-size:13px;color:#59606B;margin-top:3px;">7月14日 · 第 12 天</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 双色指标趋势卡 -->
+    <div style="font-size:18px;font-weight:800;color:#2F3337;margin:24px 4px 12px;">服药期间指标</div>
+    <div class="bg-white egoshadow" style="border-radius:18px;padding:16px;">
+      <!-- 分段控件 -->
+      <div style="background:#EFEFEF;border-radius:12px;padding:3px;display:flex;">
+        <div style="flex:1;text-align:center;font-size:13px;font-weight:700;color:#2F3337;background:#fff;border-radius:9px;padding:7px 0;box-shadow:0 1px 3px rgba(0,0,0,.08);">静息心率</div>
+        <div style="flex:1;text-align:center;font-size:13px;font-weight:600;color:#7C838D;padding:7px 0;">HRV</div>
+        <div style="flex:1;text-align:center;font-size:13px;font-weight:600;color:#7C838D;padding:7px 0;">睡眠</div>
+      </div>
+
+      <div style="display:flex;align-items:baseline;gap:8px;margin-top:16px;">
+        <div style="font-size:30px;font-weight:800;color:#2F3337;">58<span style="font-size:15px;font-weight:700;color:#9AA09F;"> bpm</span></div>
+        <span style="font-size:12px;font-weight:700;color:#4BC87E;">起药后 ↓4</span>
+      </div>
+      <div style="font-size:12px;color:#9AA09F;margin-top:2px;">起药前 7 天 → 疗程至今</div>
+
+      <!-- 双色折线：起药前灰 / 起药后红 -->
+      <svg viewBox="0 0 300 120" style="width:100%;height:118px;margin-top:12px;overflow:visible;">
+        <!-- P10-P90 参考带 -->
+        <rect x="0" y="46" width="300" height="40" fill="#D0D0D0" opacity=".22" rx="4"/>
+        <!-- 起药分界虚线 -->
+        <line x1="90" y1="6" x2="90" y2="112" stroke="#C0C4CC" stroke-width="1" stroke-dasharray="3 4"/>
+        <!-- 起药前（灰） -->
+        <polyline fill="none" stroke="#9AA09F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                  points="10,55 35,50 60,58 90,58"/>
+        <!-- 起药后（红，RHR 下降=y 增大） -->
+        <polyline fill="none" stroke="#F06B6B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                  points="90,58 120,62 150,70 180,74 210,80 240,84 275,88 295,89"/>
+        <circle cx="90" cy="58" r="3.4" fill="#fff" stroke="#9AA09F" stroke-width="2"/>
+        <circle cx="295" cy="89" r="3.6" fill="#F06B6B"/>
+        <text x="94" y="18" font-size="10" fill="#9AA09F" font-weight="600">起药</text>
+      </svg>
+
+      <!-- 起药前后均值对比 -->
+      <div style="display:flex;gap:10px;margin-top:8px;">
+        <div style="flex:1;background:#F6F6F6;border-radius:12px;padding:10px 12px;">
+          <div style="font-size:11px;color:#9AA09F;">起药前均值</div>
+          <div style="font-size:17px;font-weight:800;color:#59606B;margin-top:2px;">62<span style="font-size:11px;font-weight:600;"> bpm</span></div>
+        </div>
+        <div style="flex:1;background:rgba(240,107,107,.08);border-radius:12px;padding:10px 12px;">
+          <div style="font-size:11px;color:#9AA09F;">起药后均值</div>
+          <div style="font-size:17px;font-weight:800;color:#F06B6B;margin-top:2px;">58<span style="font-size:11px;font-weight:600;"> bpm</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 服药期间关联症状 -->
+    <div style="font-size:18px;font-weight:800;color:#2F3337;margin:24px 4px 12px;">服药期间关联症状</div>
+    <div class="bg-white egoshadow" style="border-radius:18px;overflow:hidden;">
+      <!-- row 1 -->
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:13px 16px;">
+        <div style="width:3px;height:40px;border-radius:2px;background:#F06B6B;flex:none;margin-top:2px;"></div>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:15px;font-weight:600;color:#2F3337;">7月4日　头痛</div>
+          <div style="font-size:13px;color:#59606B;margin-top:3px;line-height:1.4;">午后太阳穴胀痛，服药约 1 小时后缓解</div>
+        </div>
+        <span style="font-size:12px;color:#59606B;background:#EFEFEF;border-radius:999px;padding:3px 9px;flex:none;">第4天</span>
+        <svg style="width:16px;height:16px;color:#C0C4CC;flex:none;margin-top:3px;"><use href="#i-chevron"/></svg>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:16px;"></div>
+      <!-- row 2 -->
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:13px 16px;">
+        <div style="width:3px;height:40px;border-radius:2px;background:#F06B6B;flex:none;margin-top:2px;"></div>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:15px;font-weight:600;color:#2F3337;">7月9日　头痛</div>
+          <div style="font-size:13px;color:#59606B;margin-top:3px;line-height:1.4;">程度较前减轻，未再影响工作</div>
+        </div>
+        <span style="font-size:12px;color:#59606B;background:#EFEFEF;border-radius:999px;padding:3px 9px;flex:none;">第9天</span>
+        <svg style="width:16px;height:16px;color:#C0C4CC;flex:none;margin-top:3px;"><use href="#i-chevron"/></svg>
+      </div>
+    </div>
+
+    <!-- 检查发现（确定性 · 零 LLM） -->
+    <div style="font-size:18px;font-weight:800;color:#2F3337;margin:24px 4px 12px;">检查发现</div>
+    <div class="bg-white egoshadow" style="border-radius:18px;overflow:hidden;">
+      <div style="display:flex;align-items:flex-start;gap:10px;padding:12px 16px;">
+        <svg style="width:16px;height:16px;color:#4BC87E;flex:none;margin-top:1px;"><use href="#i-arrow-down"/></svg>
+        <div style="font-size:14px;color:#2F3337;line-height:1.45;">RHR 从起药前 62 降至 58，降幅 4bpm</div>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:16px;"></div>
+      <div style="display:flex;align-items:flex-start;gap:10px;padding:12px 16px;">
+        <svg style="width:16px;height:16px;color:#4BC87E;flex:none;margin-top:1px;"><use href="#i-arrow-up"/></svg>
+        <div style="font-size:14px;color:#2F3337;line-height:1.45;">HRV 从起药前 41 升至 46，升幅 12%</div>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:16px;"></div>
+      <div style="display:flex;align-items:flex-start;gap:10px;padding:12px 16px;">
+        <svg style="width:16px;height:16px;color:#4BC87E;flex:none;margin-top:1px;"><use href="#i-arrow-up"/></svg>
+        <div style="font-size:14px;color:#2F3337;line-height:1.45;">睡眠从起药前 6 时 40 分增加至 7 时 10 分</div>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:16px;"></div>
+      <div style="display:flex;align-items:flex-start;gap:10px;padding:12px 16px;">
+        <svg style="width:16px;height:16px;color:#E88A3C;flex:none;margin-top:1px;"><use href="#i-arrow-up"/></svg>
+        <div style="font-size:14px;color:#2F3337;line-height:1.45;">第 4 天出现头痛，第 9 天缓解</div>
+      </div>
+    </div>
+
+    <!-- 小身体 AI 叙述占位卡（蓝紫渐变） -->
+    <div style="border-radius:18px;padding:18px;margin-top:24px;background:linear-gradient(135deg,#4B54E0 0%,#6A54DE 55%,#8A5CE8 100%);box-shadow:0 12px 28px -12px rgba(74,84,224,.55);">
+      <div style="display:flex;align-items:center;gap:9px;color:#fff;">
+        <svg style="width:20px;height:20px;color:#fff;"><use href="#i-sparkle"/></svg>
+        <div style="font-size:16px;font-weight:800;">小身体 正在解读这段疗程…</div>
+      </div>
+      <div style="height:10px;border-radius:6px;background:rgba(255,255,255,.28);margin-top:16px;width:100%;"></div>
+      <div style="height:10px;border-radius:6px;background:rgba(255,255,255,.24);margin-top:9px;width:88%;"></div>
+      <div style="height:10px;border-radius:6px;background:rgba(255,255,255,.16);margin-top:9px;width:62%;"></div>
+      <div style="font-size:12px;color:rgba(255,255,255,.82);margin-top:14px;line-height:1.5;">结合用药时间线与 RHR/HRV/睡眠 三项趋势，为你归纳这段疗程的身体变化</div>
+    </div>
+
+    <!-- 停止用药（危险次按钮） -->
+    <div style="height:50px;border-radius:999px;background:rgba(232,93,93,.1);color:#E85D5D;display:flex;align-items:center;justify-content:center;gap:8px;font-size:16px;font-weight:700;margin-top:16px;">
+      <svg style="width:19px;height:19px"><use href="#i-close"/></svg>
+      停止用药
+    </div>
+
+  </div>
+</article>
+
+
+<!-- ════════════════ 屏2 · 体检报告 · 指标快照（只读详情） ════════════════ -->
+<article class="device"
+         data-caption="体检报告 · 指标快照"
+         data-nav="← 2025年度体检"
+         data-tab="none"
+         data-fab="false"
+         data-theme="light">
+  <div class="screen-pad fade">
+
+    <!-- 顶部汇总卡 -->
+    <div class="bg-white egoshadow" style="border-radius:18px;padding:16px;display:flex;align-items:center;gap:16px;">
+      <div>
+        <div style="font-size:12px;color:#9AA09F;">共解析出</div>
+        <div style="display:flex;align-items:baseline;gap:4px;margin-top:2px;">
+          <div style="font-size:34px;font-weight:800;color:#2F3337;line-height:1;">28</div>
+          <div style="font-size:13px;color:#7C838D;">项指标</div>
+        </div>
+      </div>
+      <div style="width:1px;height:36px;background:#EAEAEA;"></div>
+      <div>
+        <div style="font-size:12px;color:#9AA09F;">其中</div>
+        <div style="display:flex;align-items:baseline;gap:4px;margin-top:2px;">
+          <div style="font-size:34px;font-weight:800;color:#F06B6B;line-height:1;">4</div>
+          <div style="font-size:13px;color:#7C838D;">项偏离</div>
+        </div>
+      </div>
+      <div style="flex:1"></div>
+      <div style="font-size:11px;font-weight:700;padding:5px 10px;border-radius:999px;background:rgba(60,79,193,.1);color:#3C4FC1;display:flex;align-items:center;gap:4px;">
+        <svg style="width:11px;height:11px"><use href="#i-sparkle"/></svg>AI 已分类
+      </div>
+    </div>
+
+    <!-- 报告元信息 -->
+    <div class="bg-white egoshadow" style="border-radius:16px;padding:14px 16px;margin-top:12px;display:flex;align-items:center;gap:12px;">
+      <div style="width:34px;height:34px;border-radius:9px;background:rgba(91,141,239,.12);color:#5B8DEF;display:flex;align-items:center;justify-content:center;flex:none;">
+        <svg style="width:19px;height:19px"><use href="#i-file"/></svg>
+      </div>
+      <div style="flex:1;">
+        <div style="font-size:14px;font-weight:600;color:#2F3337;">2025 年度健康体检报告</div>
+        <div style="font-size:12px;color:#9AA09F;margin-top:2px;">2025年3月18日 · 美年大健康体检中心</div>
+      </div>
+    </div>
+
+    <div style="font-size:13px;color:#9AA09F;margin:20px 4px 10px;">按科室分组 · 偏离项已标色</div>
+
+    <!-- 血常规（展开，0 偏离） -->
+    <div class="bg-white egoshadow" style="border-radius:18px;overflow:hidden;margin-bottom:12px;">
+      <div style="display:flex;align-items:center;padding:13px 16px;">
+        <div style="font-size:15px;font-weight:700;color:#2F3337;">血常规</div>
+        <div style="font-size:12px;color:#9AA09F;margin-left:8px;">8 项</div>
+        <div style="flex:1"></div>
+        <svg style="width:18px;height:18px;color:#C0C4CC;"><use href="#i-chevron-down"/></svg>
+      </div>
+      <div style="height:1px;background:#EAEAEA;"></div>
+      <!-- rows -->
+      <div style="display:flex;align-items:center;padding:12px 16px;">
+        <div style="flex:1;"><div style="font-size:14px;font-weight:600;color:#2F3337;">白细胞 (WBC)</div><div style="font-size:12px;color:#9AA09F;margin-top:2px;">参考 4.0 - 10.0 ×10⁹/L</div></div>
+        <div style="text-align:right;"><div style="font-size:16px;font-weight:800;color:#2F3337;">6.5</div><div style="font-size:10px;color:#9AA09F;">×10⁹/L</div></div>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:16px;"></div>
+      <div style="display:flex;align-items:center;padding:12px 16px;">
+        <div style="flex:1;"><div style="font-size:14px;font-weight:600;color:#2F3337;">血红蛋白 (HGB)</div><div style="font-size:12px;color:#9AA09F;margin-top:2px;">参考 130 - 175 g/L</div></div>
+        <div style="text-align:right;"><div style="font-size:16px;font-weight:800;color:#2F3337;">152</div><div style="font-size:10px;color:#9AA09F;">g/L</div></div>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:16px;"></div>
+      <div style="display:flex;align-items:center;padding:12px 16px;">
+        <div style="flex:1;"><div style="font-size:14px;font-weight:600;color:#2F3337;">血小板 (PLT)</div><div style="font-size:12px;color:#9AA09F;margin-top:2px;">参考 125 - 350 ×10⁹/L</div></div>
+        <div style="text-align:right;"><div style="font-size:16px;font-weight:800;color:#2F3337;">245</div><div style="font-size:10px;color:#9AA09F;">×10⁹/L</div></div>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:16px;"></div>
+      <div style="display:flex;align-items:center;padding:12px 16px;">
+        <div style="flex:1;"><div style="font-size:14px;font-weight:600;color:#2F3337;">中性粒细胞 %</div><div style="font-size:12px;color:#9AA09F;margin-top:2px;">参考 50 - 70 %</div></div>
+        <div style="text-align:right;"><div style="font-size:16px;font-weight:800;color:#2F3337;">62.0</div><div style="font-size:10px;color:#9AA09F;">%</div></div>
+      </div>
+    </div>
+
+    <!-- 血脂（展开，3 偏离） -->
+    <div class="bg-white egoshadow" style="border-radius:18px;overflow:hidden;margin-bottom:12px;">
+      <div style="display:flex;align-items:center;padding:13px 16px;">
+        <div style="font-size:15px;font-weight:700;color:#2F3337;">血脂</div>
+        <div style="font-size:12px;color:#9AA09F;margin-left:8px;">4 项</div>
+        <div style="font-size:11px;font-weight:700;color:#F06B6B;background:rgba(240,107,107,.1);border-radius:6px;padding:1px 7px;margin-left:8px;">3 项偏离</div>
+        <div style="flex:1"></div>
+        <svg style="width:18px;height:18px;color:#C0C4CC;"><use href="#i-chevron-down"/></svg>
+      </div>
+      <div style="height:1px;background:#EAEAEA;"></div>
+      <!-- 总胆固醇 ↑偏高 -->
+      <div style="display:flex;align-items:center;padding:12px 16px;">
+        <div style="flex:1;">
+          <div style="display:flex;align-items:center;gap:7px;"><span style="font-size:14px;font-weight:600;color:#2F3337;">总胆固醇</span><span style="font-size:10px;font-weight:700;color:#F5A623;background:rgba(245,166,35,.12);border-radius:5px;padding:1px 6px;">↑ 偏高</span></div>
+          <div style="font-size:12px;color:#9AA09F;margin-top:2px;">参考 &lt; 5.2 mmol/L</div>
+        </div>
+        <div style="text-align:right;"><div style="font-size:16px;font-weight:800;color:#F5A623;">5.6</div><div style="font-size:10px;color:#9AA09F;">mmol/L</div></div>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:16px;"></div>
+      <!-- LDL-C ↑显著偏高 -->
+      <div style="display:flex;align-items:center;padding:12px 16px;">
+        <div style="flex:1;">
+          <div style="display:flex;align-items:center;gap:7px;"><span style="font-size:14px;font-weight:600;color:#2F3337;">LDL-C</span><span style="font-size:10px;font-weight:700;color:#F06B6B;background:rgba(240,107,107,.12);border-radius:5px;padding:1px 6px;">↑ 显著偏高</span></div>
+          <div style="font-size:12px;color:#9AA09F;margin-top:2px;">参考 &lt; 3.4 mmol/L</div>
+        </div>
+        <div style="text-align:right;"><div style="font-size:16px;font-weight:800;color:#F06B6B;">3.7</div><div style="font-size:10px;color:#9AA09F;">mmol/L</div></div>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:16px;"></div>
+      <!-- HDL-C 正常 -->
+      <div style="display:flex;align-items:center;padding:12px 16px;">
+        <div style="flex:1;"><div style="font-size:14px;font-weight:600;color:#2F3337;">HDL-C</div><div style="font-size:12px;color:#9AA09F;margin-top:2px;">参考 &gt; 1.0 mmol/L</div></div>
+        <div style="text-align:right;"><div style="font-size:16px;font-weight:800;color:#2F3337;">1.2</div><div style="font-size:10px;color:#9AA09F;">mmol/L</div></div>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:16px;"></div>
+      <!-- 甘油三酯 ↑偏高 -->
+      <div style="display:flex;align-items:center;padding:12px 16px;">
+        <div style="flex:1;">
+          <div style="display:flex;align-items:center;gap:7px;"><span style="font-size:14px;font-weight:600;color:#2F3337;">甘油三酯</span><span style="font-size:10px;font-weight:700;color:#F5A623;background:rgba(245,166,35,.12);border-radius:5px;padding:1px 6px;">↑ 偏高</span></div>
+          <div style="font-size:12px;color:#9AA09F;margin-top:2px;">参考 &lt; 1.7 mmol/L</div>
+        </div>
+        <div style="text-align:right;"><div style="font-size:16px;font-weight:800;color:#F5A623;">1.9</div><div style="font-size:10px;color:#9AA09F;">mmol/L</div></div>
+      </div>
+    </div>
+
+    <!-- 血糖（展开，1 偏离） -->
+    <div class="bg-white egoshadow" style="border-radius:18px;overflow:hidden;margin-bottom:12px;">
+      <div style="display:flex;align-items:center;padding:13px 16px;">
+        <div style="font-size:15px;font-weight:700;color:#2F3337;">血糖</div>
+        <div style="font-size:12px;color:#9AA09F;margin-left:8px;">2 项</div>
+        <div style="font-size:11px;font-weight:700;color:#F5A623;background:rgba(245,166,35,.1);border-radius:6px;padding:1px 7px;margin-left:8px;">1 项偏离</div>
+        <div style="flex:1"></div>
+        <svg style="width:18px;height:18px;color:#C0C4CC;"><use href="#i-chevron-down"/></svg>
+      </div>
+      <div style="height:1px;background:#EAEAEA;"></div>
+      <div style="display:flex;align-items:center;padding:12px 16px;">
+        <div style="flex:1;">
+          <div style="display:flex;align-items:center;gap:7px;"><span style="font-size:14px;font-weight:600;color:#2F3337;">空腹血糖</span><span style="font-size:10px;font-weight:700;color:#F5A623;background:rgba(245,166,35,.12);border-radius:5px;padding:1px 6px;">↑ 偏高</span></div>
+          <div style="font-size:12px;color:#9AA09F;margin-top:2px;">参考 3.9 - 6.1 mmol/L</div>
+        </div>
+        <div style="text-align:right;"><div style="font-size:16px;font-weight:800;color:#F5A623;">6.3</div><div style="font-size:10px;color:#9AA09F;">mmol/L</div></div>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:16px;"></div>
+      <div style="display:flex;align-items:center;padding:12px 16px;">
+        <div style="flex:1;"><div style="font-size:14px;font-weight:600;color:#2F3337;">糖化血红蛋白</div><div style="font-size:12px;color:#9AA09F;margin-top:2px;">参考 &lt; 6.0 %</div></div>
+        <div style="text-align:right;"><div style="font-size:16px;font-weight:800;color:#2F3337;">5.6</div><div style="font-size:10px;color:#9AA09F;">%</div></div>
+      </div>
+    </div>
+
+    <!-- 肝功能（展开，0 偏离） -->
+    <div class="bg-white egoshadow" style="border-radius:18px;overflow:hidden;margin-bottom:12px;">
+      <div style="display:flex;align-items:center;padding:13px 16px;">
+        <div style="font-size:15px;font-weight:700;color:#2F3337;">肝功能</div>
+        <div style="font-size:12px;color:#9AA09F;margin-left:8px;">4 项</div>
+        <div style="flex:1"></div>
+        <svg style="width:18px;height:18px;color:#C0C4CC;"><use href="#i-chevron-down"/></svg>
+      </div>
+      <div style="height:1px;background:#EAEAEA;"></div>
+      <div style="display:flex;align-items:center;padding:12px 16px;">
+        <div style="flex:1;"><div style="font-size:14px;font-weight:600;color:#2F3337;">ALT (谷丙转氨酶)</div><div style="font-size:12px;color:#9AA09F;margin-top:2px;">参考 9 - 50 U/L</div></div>
+        <div style="text-align:right;"><div style="font-size:16px;font-weight:800;color:#2F3337;">38</div><div style="font-size:10px;color:#9AA09F;">U/L</div></div>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:16px;"></div>
+      <div style="display:flex;align-items:center;padding:12px 16px;">
+        <div style="flex:1;"><div style="font-size:14px;font-weight:600;color:#2F3337;">AST (谷草转氨酶)</div><div style="font-size:12px;color:#9AA09F;margin-top:2px;">参考 15 - 40 U/L</div></div>
+        <div style="text-align:right;"><div style="font-size:16px;font-weight:800;color:#2F3337;">26</div><div style="font-size:10px;color:#9AA09F;">U/L</div></div>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:16px;"></div>
+      <div style="display:flex;align-items:center;padding:12px 16px;">
+        <div style="flex:1;"><div style="font-size:14px;font-weight:600;color:#2F3337;">总胆红素</div><div style="font-size:12px;color:#9AA09F;margin-top:2px;">参考 5 - 21 μmol/L</div></div>
+        <div style="text-align:right;"><div style="font-size:16px;font-weight:800;color:#2F3337;">14.2</div><div style="font-size:10px;color:#9AA09F;">μmol/L</div></div>
+      </div>
+    </div>
+
+    <!-- 折叠分组（暗示其余科室，凑齐 28 项） -->
+    <div class="bg-white egoshadow" style="border-radius:18px;overflow:hidden;margin-bottom:12px;">
+      <div style="display:flex;align-items:center;padding:13px 16px;">
+        <div style="font-size:15px;font-weight:700;color:#2F3337;">肾功能</div>
+        <div style="font-size:12px;color:#9AA09F;margin-left:8px;">3 项</div>
+        <div style="flex:1"></div>
+        <svg style="width:18px;height:18px;color:#C0C4CC;"><use href="#i-chevron"/></svg>
+      </div>
+    </div>
+    <div class="bg-white egoshadow" style="border-radius:18px;overflow:hidden;">
+      <div style="display:flex;align-items:center;padding:13px 16px;">
+        <div style="font-size:15px;font-weight:700;color:#2F3337;">甲状腺 · 其他</div>
+        <div style="font-size:12px;color:#9AA09F;margin-left:8px;">7 项</div>
+        <div style="flex:1"></div>
+        <svg style="width:18px;height:18px;color:#C0C4CC;"><use href="#i-chevron"/></svg>
+      </div>
+    </div>
+
+  </div>
+</article>

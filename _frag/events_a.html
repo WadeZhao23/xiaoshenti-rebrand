@@ -1,0 +1,229 @@
+<article class="device" data-caption="事件时间线 · 睡眠/运动/用药/体检" data-nav="none" data-tab="events" data-fab="true">
+  <div class="screen-pad fade">
+    <!-- 顶栏第一行：日历 + 头像（右对齐，与今日/趋势对齐） -->
+    <div style="display:flex;align-items:center;gap:14px;padding-top:6px;">
+      <div style="flex:1"></div>
+      <div style="color:#2F3337"><svg style="width:22px;height:22px"><use href="#i-calendar"/></svg></div>
+      <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#8FA0F5,#3C4FC1);display:flex;align-items:center;justify-content:center;color:#fff"><svg style="width:22px;height:22px"><use href="#i-user"/></svg></div>
+    </div>
+
+    <!-- 标题行：事件 + 帮助 -->
+    <div style="display:flex;align-items:center;gap:9px;margin-top:14px;">
+      <div style="font-size:30px;font-weight:800;color:#2F3337;">事件</div>
+      <div style="width:19px;height:19px;border-radius:50%;border:1.4px solid #59606B;color:#59606B;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;">?</div>
+    </div>
+
+    <!-- 操作行：添加事件胶囊 + 搜索圆 -->
+    <div style="display:flex;align-items:center;gap:14px;margin-top:16px;">
+      <div style="flex:1;position:relative;height:44px;border-radius:999px;background:#3C4FC1;display:flex;align-items:center;justify-content:center;">
+        <span style="font-size:16px;font-weight:600;color:#fff;">添加事件</span>
+        <div style="position:absolute;right:16px;top:0;bottom:0;display:flex;align-items:center;color:#fff;"><svg style="width:19px;height:19px"><use href="#i-plus"/></svg></div>
+      </div>
+      <div style="width:44px;height:44px;border-radius:50%;background:#F6F6F6;border:1px solid #C9CDD2;display:flex;align-items:center;justify-content:center;color:#59606B;"><svg style="width:19px;height:19px"><use href="#i-search"/></svg></div>
+    </div>
+
+    <!-- ===== 今天 ===== -->
+    <div style="font-size:13px;font-weight:600;color:#9AA09F;margin:24px 4px 10px;">今天 · 7月14日</div>
+    <div class="bg-white egoshadow" style="border-radius:16px;padding:2px 0;">
+      <!-- 夜间睡眠（自动） -->
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;">
+        <div style="width:38px;height:38px;flex-shrink:0;border-radius:50%;background:rgba(245,166,35,.15);color:#F5A623;display:flex;align-items:center;justify-content:center;"><svg style="width:20px;height:20px"><use href="#i-moon"/></svg></div>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:15px;font-weight:600;color:#2F3337;">夜间睡眠 7h25m</div>
+          <div style="font-size:13px;color:#7C838D;margin-top:3px;display:flex;align-items:center;gap:7px;flex-wrap:wrap;">
+            <span>入睡 23:47 · 深睡 1h12m</span>
+            <span style="font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:999px;background:rgba(60,79,193,.09);color:#3C4FC1;white-space:nowrap;">小身体自动</span>
+          </div>
+        </div>
+        <div style="font-size:12.5px;color:#9AA09F;flex-shrink:0;">7小时前</div>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:66px;"></div>
+      <!-- 跑步 -->
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;">
+        <div style="width:38px;height:38px;flex-shrink:0;border-radius:50%;background:rgba(34,190,197,.15);color:#22BEC5;display:flex;align-items:center;justify-content:center;"><svg style="width:20px;height:20px"><use href="#i-run"/></svg></div>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:15px;font-weight:600;color:#2F3337;">跑步 30min</div>
+          <div style="font-size:13px;color:#7C838D;margin-top:3px;">5.2km · 配速 5'46" · RPE 6</div>
+        </div>
+        <div style="font-size:12.5px;color:#9AA09F;flex-shrink:0;">上午 7:10</div>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:66px;"></div>
+      <!-- 布洛芬 -->
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;">
+        <div style="width:38px;height:38px;flex-shrink:0;border-radius:50%;background:rgba(168,141,232,.15);color:#A88DE8;display:flex;align-items:center;justify-content:center;"><svg style="width:20px;height:20px"><use href="#i-pill"/></svg></div>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:15px;font-weight:600;color:#2F3337;">布洛芬 400mg</div>
+          <div style="font-size:13px;color:#7C838D;margin-top:3px;">口服 · 短期处方 · 早晚各一次</div>
+        </div>
+        <div style="font-size:12.5px;color:#9AA09F;flex-shrink:0;">上午 9:15</div>
+      </div>
+    </div>
+
+    <!-- ===== 昨天 ===== -->
+    <div style="font-size:13px;font-weight:600;color:#9AA09F;margin:22px 4px 10px;">昨天 · 7月13日</div>
+    <div class="bg-white egoshadow" style="border-radius:16px;padding:2px 0;">
+      <!-- 头痛 -->
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;">
+        <div style="width:38px;height:38px;flex-shrink:0;border-radius:50%;background:rgba(240,107,107,.15);color:#F06B6B;display:flex;align-items:center;justify-content:center;"><svg style="width:20px;height:20px"><use href="#i-drop"/></svg></div>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:15px;font-weight:600;color:#2F3337;">头痛 强度 6</div>
+          <div style="font-size:13px;color:#7C838D;margin-top:3px;">太阳穴 · 胀痛 · 持续 1h30m</div>
+        </div>
+        <div style="font-size:12.5px;color:#9AA09F;flex-shrink:0;">21:30</div>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:66px;"></div>
+      <!-- 力量训练 -->
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;">
+        <div style="width:38px;height:38px;flex-shrink:0;border-radius:50%;background:rgba(34,190,197,.15);color:#22BEC5;display:flex;align-items:center;justify-content:center;"><svg style="width:20px;height:20px"><use href="#i-run"/></svg></div>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:15px;font-weight:600;color:#2F3337;">力量训练 45min</div>
+          <div style="font-size:13px;color:#7C838D;margin-top:3px;">胸 / 三头 · 5 组 · RPE 7</div>
+        </div>
+        <div style="font-size:12.5px;color:#9AA09F;flex-shrink:0;">18:20</div>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:66px;"></div>
+      <!-- 熬夜（自动） -->
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;">
+        <div style="width:38px;height:38px;flex-shrink:0;border-radius:50%;background:rgba(245,166,35,.15);color:#F5A623;display:flex;align-items:center;justify-content:center;"><svg style="width:20px;height:20px"><use href="#i-moon"/></svg></div>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:15px;font-weight:600;color:#2F3337;">熬夜</div>
+          <div style="font-size:13px;color:#7C838D;margin-top:3px;display:flex;align-items:center;gap:7px;flex-wrap:wrap;">
+            <span>入睡 02:15 · 晚于基线 2h</span>
+            <span style="font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:999px;background:rgba(60,79,193,.09);color:#3C4FC1;white-space:nowrap;">小身体自动</span>
+          </div>
+        </div>
+        <div style="font-size:12.5px;color:#9AA09F;flex-shrink:0;">02:40</div>
+      </div>
+    </div>
+
+    <!-- ===== 更早 ===== -->
+    <div style="font-size:13px;font-weight:600;color:#9AA09F;margin:22px 4px 10px;">更早</div>
+    <div class="bg-white egoshadow" style="border-radius:16px;padding:2px 0;">
+      <!-- 体检报告 -->
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;">
+        <div style="width:38px;height:38px;flex-shrink:0;border-radius:50%;background:rgba(91,141,239,.15);color:#5B8DEF;display:flex;align-items:center;justify-content:center;"><svg style="width:20px;height:20px"><use href="#i-file"/></svg></div>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:15px;font-weight:600;color:#2F3337;">2025 年度体检 · 28 项指标</div>
+          <div style="font-size:13px;color:#7C838D;margin-top:3px;">
+            <span style="color:#F5A623;font-weight:600;">3 项超出参考范围</span> · 华山医院
+          </div>
+        </div>
+        <div style="font-size:12.5px;color:#9AA09F;flex-shrink:0;">7月2日</div>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:66px;"></div>
+      <!-- 维生素 D -->
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;">
+        <div style="width:38px;height:38px;flex-shrink:0;border-radius:50%;background:rgba(168,141,232,.15);color:#A88DE8;display:flex;align-items:center;justify-content:center;"><svg style="width:20px;height:20px"><use href="#i-pill"/></svg></div>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:15px;font-weight:600;color:#2F3337;">维生素 D 1000IU</div>
+          <div style="font-size:13px;color:#7C838D;margin-top:3px;">补剂 · 每日一次</div>
+        </div>
+        <div style="font-size:12.5px;color:#9AA09F;flex-shrink:0;">6月28日</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;font-size:12.5px;color:#C0C4CC;margin-top:22px;">长按卡片可调整事件排序</div>
+  </div>
+</article>
+
+<article class="device" data-caption="添加事件 · 头痛（身体事件）" data-nav="← 新事件" data-tab="none" data-fab="false">
+  <div class="screen-pad fade" style="padding-bottom:120px;">
+    <!-- 细目标题（事件类型名，对齐真机 35pt 大标题） -->
+    <div style="font-size:30px;font-weight:800;color:#2F3337;margin-top:2px;">头痛</div>
+    <div style="font-size:13px;color:#59606B;margin-top:6px;">填写详细内容，小身体将会帮你结构化数据</div>
+
+    <!-- 类型切换 chip -->
+    <div style="display:flex;gap:9px;margin-top:16px;overflow:hidden;">
+      <div style="font-size:13px;font-weight:600;padding:7px 15px;border-radius:999px;background:#3C4FC1;color:#fff;white-space:nowrap;">头痛</div>
+      <div style="font-size:13px;font-weight:500;padding:7px 15px;border-radius:999px;background:#EFEFEF;color:#7C838D;white-space:nowrap;">腹痛</div>
+      <div style="font-size:13px;font-weight:500;padding:7px 15px;border-radius:999px;background:#EFEFEF;color:#7C838D;white-space:nowrap;">发烧</div>
+      <div style="font-size:13px;font-weight:500;padding:7px 15px;border-radius:999px;background:#EFEFEF;color:#7C838D;white-space:nowrap;">头晕</div>
+      <div style="font-size:13px;font-weight:500;padding:7px 15px;border-radius:999px;background:#EFEFEF;color:#7C838D;white-space:nowrap;">乏力</div>
+    </div>
+
+    <!-- 必填信息 -->
+    <div style="font-size:17px;font-weight:700;color:#2F3337;margin:24px 4px 10px;">必填信息</div>
+    <div class="bg-white egoshadow" style="border-radius:16px;">
+      <div style="display:flex;align-items:center;padding:15px 16px;">
+        <div style="flex:1;font-size:15px;color:#2F3337;">发生时间</div>
+        <div style="font-size:15px;color:#59606B;margin-right:8px;">7月14日 21:30</div>
+        <svg style="width:16px;height:16px;color:#7C838D;margin-right:2px;"><use href="#i-calendar"/></svg>
+        <svg style="width:17px;height:17px;color:#C0C4CC"><use href="#i-chevron"/></svg>
+      </div>
+    </div>
+
+    <!-- 选填信息 -->
+    <div style="font-size:17px;font-weight:700;color:#2F3337;margin:22px 4px 10px;">选填信息</div>
+    <div class="bg-white egoshadow" style="border-radius:16px;">
+      <!-- 持续时间 -->
+      <div style="display:flex;align-items:center;padding:15px 16px;">
+        <div style="flex:1;font-size:15px;color:#2F3337;">持续时间</div>
+        <div style="font-size:15px;color:#59606B;margin-right:8px;">1 小时 30 分</div>
+        <svg style="width:17px;height:17px;color:#C0C4CC"><use href="#i-chevron"/></svg>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:16px;"></div>
+      <!-- 部位 -->
+      <div style="display:flex;align-items:center;padding:15px 16px;">
+        <div style="flex:1;font-size:15px;color:#2F3337;">部位</div>
+        <div style="font-size:15px;color:#59606B;margin-right:8px;">太阳穴</div>
+        <svg style="width:17px;height:17px;color:#C0C4CC"><use href="#i-chevron"/></svg>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:16px;"></div>
+      <!-- 性质 -->
+      <div style="display:flex;align-items:center;padding:15px 16px;">
+        <div style="flex:1;font-size:15px;color:#2F3337;">性质</div>
+        <div style="font-size:15px;color:#59606B;margin-right:8px;">胀痛</div>
+        <svg style="width:17px;height:17px;color:#C0C4CC"><use href="#i-chevron"/></svg>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:16px;"></div>
+      <!-- 强度（内联 1-10 分段） -->
+      <div style="padding:16px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div style="font-size:15px;color:#2F3337;">强度</div>
+          <div style="font-size:15px;font-weight:800;color:#3C4FC1;">6 <span style="font-size:13px;color:#9AA09F;font-weight:600;">/ 10</span></div>
+        </div>
+        <div style="display:flex;gap:5px;margin-top:12px;">
+          <div style="flex:1;height:7px;border-radius:999px;background:#3C4FC1;"></div>
+          <div style="flex:1;height:7px;border-radius:999px;background:#3C4FC1;"></div>
+          <div style="flex:1;height:7px;border-radius:999px;background:#3C4FC1;"></div>
+          <div style="flex:1;height:7px;border-radius:999px;background:#3C4FC1;"></div>
+          <div style="flex:1;height:7px;border-radius:999px;background:#3C4FC1;"></div>
+          <div style="flex:1;height:7px;border-radius:999px;background:#3C4FC1;"></div>
+          <div style="flex:1;height:7px;border-radius:999px;background:#EFEFEF;"></div>
+          <div style="flex:1;height:7px;border-radius:999px;background:#EFEFEF;"></div>
+          <div style="flex:1;height:7px;border-radius:999px;background:#EFEFEF;"></div>
+          <div style="flex:1;height:7px;border-radius:999px;background:#EFEFEF;"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:11px;color:#9AA09F;">
+          <span>1 轻微</span>
+          <span>10 剧烈</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 备注 -->
+    <div style="font-size:17px;font-weight:700;color:#2F3337;margin:22px 4px 10px;">备注</div>
+    <div class="bg-white egoshadow" style="border-radius:16px;padding:14px;">
+      <div style="min-height:82px;border-radius:12px;background:#F7F7F7;border:1px solid #EAEAEA;padding:12px 13px;font-size:14px;line-height:1.55;color:#59606B;">
+        下午两点会议后开始，太阳穴一跳一跳的胀痛感，服了一片布洛芬后缓解。
+      </div>
+    </div>
+
+    <!-- 照片 -->
+    <div style="font-size:17px;font-weight:700;color:#2F3337;margin:22px 4px 10px;">照片</div>
+    <div class="bg-white egoshadow" style="border-radius:16px;padding:14px;">
+      <div style="width:76px;height:76px;border-radius:12px;border:1.6px dashed #C9CDD2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#9AA09F;">
+        <svg style="width:20px;height:20px"><use href="#i-plus"/></svg>
+        <span style="font-size:11px;">上传</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部固定保存条 -->
+  <div style="position:absolute;left:0;right:0;bottom:0;padding:14px 18px 30px;background:linear-gradient(to top,#F6F6F6 62%,rgba(246,246,246,0));">
+    <div style="height:50px;border-radius:999px;background:#3C4FC1;display:flex;align-items:center;justify-content:center;gap:8px;color:#fff;">
+      <svg style="width:19px;height:19px"><use href="#i-check"/></svg>
+      <span style="font-size:16px;font-weight:700;">保存</span>
+    </div>
+  </div>
+</article>
