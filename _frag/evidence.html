@@ -1,0 +1,340 @@
+<!-- ============================================================
+     屏1 · 证据回放 一级页（双日对照）— EvidencePlaybackView 复刻
+     ============================================================ -->
+<article class="device"
+         data-screen="evidence"
+         data-caption="证据回放 · 双日对照"
+         data-nav="← 证据回放"
+         data-tab="none"
+         data-fab="false"
+         data-theme="light">
+  <div class="screen-pad fade">
+
+    <!-- 大标题 -->
+    <div style="font-size:26px;font-weight:800;color:#2F3337;padding-top:4px;">全时段证据回放</div>
+
+    <!-- 双日胶囊对照行 -->
+    <div style="display:flex;align-items:center;gap:0;margin-top:18px;">
+      <!-- 对照日胶囊 -->
+      <div style="display:flex;align-items:center;gap:6px;padding:9px 15px;border-radius:999px;background:#3C4FC1;color:#fff;">
+        <span style="font-size:14px;font-weight:600;">对照 7/7</span>
+        <svg style="width:10px;height:10px"><use href="#i-chevron-down"/></svg>
+      </div>
+      <!-- 连接虚线 + 对照箭头 -->
+      <div style="flex:0 0 44px;display:flex;align-items:center;justify-content:center;position:relative;">
+        <svg width="44" height="14" viewBox="0 0 44 14">
+          <line x1="2" y1="7" x2="42" y2="7" stroke="#3C4FC1" stroke-opacity=".4" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <path d="M34 3 L41 7 L34 11" fill="none" stroke="#3C4FC1" stroke-opacity=".55" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <!-- 今日胶囊 -->
+      <div style="display:flex;align-items:center;gap:6px;padding:9px 15px;border-radius:999px;background:#3C4FC1;color:#fff;">
+        <span style="font-size:14px;font-weight:600;">今日 7/14</span>
+        <svg style="width:10px;height:10px"><use href="#i-chevron-down"/></svg>
+      </div>
+    </div>
+
+    <!-- 副标题 -->
+    <div style="font-size:13px;color:#59606B;margin-top:12px;line-height:1.5;">对比 7月7日 与今日的关键指标，看看今天为什么不一样。</div>
+
+    <!-- ===== Section 卡栈 ===== -->
+    <div style="display:flex;flex-direction:column;gap:16px;margin-top:20px;">
+
+      <!-- HRV -->
+      <div class="bg-white egoshadow" data-go="evidence_hrv" style="border-radius:16px;padding:16px;cursor:pointer;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:20px;font-weight:800;color:#2F3337;">HRV</span>
+          <span style="font-size:11px;font-weight:700;padding:3px 8px;border-radius:8px;background:rgba(240,107,107,.12);color:#F06B6B;">偏低</span>
+          <span style="flex:1"></span>
+          <svg style="width:16px;height:16px;color:#59606B"><use href="#i-chevron"/></svg>
+        </div>
+        <div style="display:flex;margin-top:16px;">
+          <div style="flex:1;">
+            <div style="display:flex;align-items:center;gap:5px;"><span style="width:7px;height:7px;border-radius:50%;background:#C0C4CC;"></span><span style="font-size:12px;color:#7C838D;">对照 7/7</span></div>
+            <div style="margin-top:6px;font-size:22px;font-weight:800;color:#2F3337;">61<span style="font-size:13px;font-weight:600;color:#9AA09F;">ms</span></div>
+          </div>
+          <div style="flex:1;">
+            <div style="display:flex;align-items:center;gap:5px;"><span style="width:7px;height:7px;border-radius:50%;background:#3C4FC1;"></span><span style="font-size:12px;color:#7C838D;">今日</span></div>
+            <div style="margin-top:6px;display:flex;align-items:baseline;gap:6px;"><span style="font-size:22px;font-weight:800;color:#2F3337;">52<span style="font-size:13px;font-weight:600;color:#9AA09F;">ms</span></span><span style="font-size:12px;font-weight:700;color:#F06B6B;">↓9</span></div>
+          </div>
+          <div style="flex:1;">
+            <div style="display:flex;align-items:center;gap:5px;"><span style="width:7px;height:7px;border-radius:50%;background:#4BC87E;"></span><span style="font-size:12px;color:#7C838D;">基线</span></div>
+            <div style="margin-top:6px;font-size:22px;font-weight:800;color:#2F3337;">58<span style="font-size:13px;font-weight:600;color:#9AA09F;">ms</span></div>
+          </div>
+        </div>
+        <svg viewBox="0 0 300 78" style="width:100%;height:78px;margin-top:14px;overflow:visible;">
+          <line x1="4" y1="30" x2="296" y2="30" stroke="#4BC87E" stroke-width="1.4" stroke-dasharray="4 3" opacity=".55"/>
+          <polyline fill="none" stroke="#C0C4CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="4,26 44,20 84,30 124,22 164,28 204,18 244,26 296,22"/>
+          <polyline fill="none" stroke="#3C4FC1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" points="4,42 44,50 84,44 124,58 164,48 204,60 244,52 296,56"/>
+        </svg>
+      </div>
+
+      <!-- 静息心率 -->
+      <div class="bg-white egoshadow" style="border-radius:16px;padding:16px;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:20px;font-weight:800;color:#2F3337;">静息心率</span>
+          <span style="font-size:11px;font-weight:700;padding:3px 8px;border-radius:8px;background:rgba(245,166,35,.12);color:#F5A623;">偏高</span>
+          <span style="flex:1"></span>
+          <svg style="width:16px;height:16px;color:#59606B"><use href="#i-chevron"/></svg>
+        </div>
+        <div style="display:flex;margin-top:16px;">
+          <div style="flex:1;">
+            <div style="display:flex;align-items:center;gap:5px;"><span style="width:7px;height:7px;border-radius:50%;background:#C0C4CC;"></span><span style="font-size:12px;color:#7C838D;">对照 7/7</span></div>
+            <div style="margin-top:6px;font-size:22px;font-weight:800;color:#2F3337;">54<span style="font-size:13px;font-weight:600;color:#9AA09F;">bpm</span></div>
+          </div>
+          <div style="flex:1;">
+            <div style="display:flex;align-items:center;gap:5px;"><span style="width:7px;height:7px;border-radius:50%;background:#3C4FC1;"></span><span style="font-size:12px;color:#7C838D;">今日</span></div>
+            <div style="margin-top:6px;display:flex;align-items:baseline;gap:6px;"><span style="font-size:22px;font-weight:800;color:#2F3337;">61<span style="font-size:13px;font-weight:600;color:#9AA09F;">bpm</span></span><span style="font-size:12px;font-weight:700;color:#F5A623;">↑7</span></div>
+          </div>
+          <div style="flex:1;">
+            <div style="display:flex;align-items:center;gap:5px;"><span style="width:7px;height:7px;border-radius:50%;background:#4BC87E;"></span><span style="font-size:12px;color:#7C838D;">基线</span></div>
+            <div style="margin-top:6px;font-size:22px;font-weight:800;color:#2F3337;">56<span style="font-size:13px;font-weight:600;color:#9AA09F;">bpm</span></div>
+          </div>
+        </div>
+        <svg viewBox="0 0 300 78" style="width:100%;height:78px;margin-top:14px;overflow:visible;">
+          <line x1="4" y1="46" x2="296" y2="46" stroke="#4BC87E" stroke-width="1.4" stroke-dasharray="4 3" opacity=".55"/>
+          <polyline fill="none" stroke="#C0C4CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="4,52 44,48 84,54 124,46 164,50 204,44 244,50 296,46"/>
+          <polyline fill="none" stroke="#3C4FC1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" points="4,34 44,28 84,36 124,24 164,32 204,22 244,30 296,26"/>
+        </svg>
+      </div>
+
+      <!-- 睡眠 -->
+      <div class="bg-white egoshadow" style="border-radius:16px;padding:16px;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:20px;font-weight:800;color:#2F3337;">睡眠</span>
+          <span style="font-size:11px;font-weight:700;padding:3px 8px;border-radius:8px;background:rgba(240,107,107,.12);color:#F06B6B;">偏少</span>
+          <span style="flex:1"></span>
+          <svg style="width:16px;height:16px;color:#59606B"><use href="#i-chevron"/></svg>
+        </div>
+        <div style="display:flex;margin-top:16px;">
+          <div style="flex:1;">
+            <div style="display:flex;align-items:center;gap:5px;"><span style="width:7px;height:7px;border-radius:50%;background:#C0C4CC;"></span><span style="font-size:12px;color:#7C838D;">对照 7/7</span></div>
+            <div style="margin-top:6px;font-size:22px;font-weight:800;color:#2F3337;">7<span style="font-size:13px;font-weight:600;color:#9AA09F;">h</span>48<span style="font-size:13px;font-weight:600;color:#9AA09F;">m</span></div>
+          </div>
+          <div style="flex:1;">
+            <div style="display:flex;align-items:center;gap:5px;"><span style="width:7px;height:7px;border-radius:50%;background:#3C4FC1;"></span><span style="font-size:12px;color:#7C838D;">今日</span></div>
+            <div style="margin-top:6px;display:flex;align-items:baseline;gap:6px;"><span style="font-size:22px;font-weight:800;color:#2F3337;">6<span style="font-size:13px;font-weight:600;color:#9AA09F;">h</span>32<span style="font-size:13px;font-weight:600;color:#9AA09F;">m</span></span><span style="font-size:12px;font-weight:700;color:#F06B6B;">↓1h16</span></div>
+          </div>
+          <div style="flex:1;">
+            <div style="display:flex;align-items:center;gap:5px;"><span style="width:7px;height:7px;border-radius:50%;background:#4BC87E;"></span><span style="font-size:12px;color:#7C838D;">基线</span></div>
+            <div style="margin-top:6px;font-size:22px;font-weight:800;color:#2F3337;">7<span style="font-size:13px;font-weight:600;color:#9AA09F;">h</span>30<span style="font-size:13px;font-weight:600;color:#9AA09F;">m</span></div>
+          </div>
+        </div>
+        <!-- 双日睡眠时长堆叠条对照 -->
+        <div style="margin-top:16px;display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="width:34px;font-size:11px;color:#9AA09F;">7/7</span>
+            <div style="flex:1;height:16px;border-radius:6px;overflow:hidden;display:flex;">
+              <div style="width:22%;background:#3C4FC1;"></div><div style="width:48%;background:#8FA0F5;"></div><div style="width:24%;background:#C7D0F7;"></div><div style="width:6%;background:#EFEFEF;"></div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="width:34px;font-size:11px;color:#9AA09F;">今日</span>
+            <div style="flex:1;height:16px;border-radius:6px;overflow:hidden;display:flex;">
+              <div style="width:16%;background:#3C4FC1;"></div><div style="width:44%;background:#8FA0F5;"></div><div style="width:22%;background:#C7D0F7;"></div><div style="width:18%;background:#EFEFEF;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 运动 -->
+      <div class="bg-white egoshadow" style="border-radius:16px;padding:16px;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:20px;font-weight:800;color:#2F3337;">运动</span>
+          <span style="font-size:11px;font-weight:700;padding:3px 8px;border-radius:8px;background:rgba(240,107,107,.12);color:#F06B6B;">减少</span>
+          <span style="flex:1"></span>
+          <svg style="width:16px;height:16px;color:#59606B"><use href="#i-chevron"/></svg>
+        </div>
+        <div style="display:flex;margin-top:16px;">
+          <div style="flex:1;">
+            <div style="display:flex;align-items:center;gap:5px;"><span style="width:7px;height:7px;border-radius:50%;background:#C0C4CC;"></span><span style="font-size:12px;color:#7C838D;">对照 7/7</span></div>
+            <div style="margin-top:6px;font-size:22px;font-weight:800;color:#2F3337;">45<span style="font-size:13px;font-weight:600;color:#9AA09F;">min</span></div>
+          </div>
+          <div style="flex:1;">
+            <div style="display:flex;align-items:center;gap:5px;"><span style="width:7px;height:7px;border-radius:50%;background:#3C4FC1;"></span><span style="font-size:12px;color:#7C838D;">今日</span></div>
+            <div style="margin-top:6px;display:flex;align-items:baseline;gap:6px;"><span style="font-size:22px;font-weight:800;color:#2F3337;">30<span style="font-size:13px;font-weight:600;color:#9AA09F;">min</span></span><span style="font-size:12px;font-weight:700;color:#F06B6B;">↓15</span></div>
+          </div>
+          <div style="flex:1;">
+            <div style="display:flex;align-items:center;gap:5px;"><span style="width:7px;height:7px;border-radius:50%;background:#4BC87E;"></span><span style="font-size:12px;color:#7C838D;">基线</span></div>
+            <div style="margin-top:6px;font-size:22px;font-weight:800;color:#2F3337;">38<span style="font-size:13px;font-weight:600;color:#9AA09F;">min</span></div>
+          </div>
+        </div>
+        <!-- 双日横向单段柱对照 -->
+        <div style="margin-top:16px;display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="width:34px;font-size:11px;color:#9AA09F;">7/7</span>
+            <div style="flex:1;height:14px;border-radius:999px;background:#EFEFEF;overflow:hidden;"><div style="width:75%;height:100%;border-radius:999px;background:#C0C4CC;"></div></div>
+            <span style="font-size:11px;color:#7C838D;">45min</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="width:34px;font-size:11px;color:#9AA09F;">今日</span>
+            <div style="flex:1;height:14px;border-radius:999px;background:#EFEFEF;overflow:hidden;"><div style="width:50%;height:100%;border-radius:999px;background:#22BEC5;"></div></div>
+            <span style="font-size:11px;color:#7C838D;">30min</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 事件 -->
+      <div class="bg-white egoshadow" style="border-radius:16px;padding:16px;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:20px;font-weight:800;color:#2F3337;">事件</span>
+          <span style="font-size:11px;font-weight:700;padding:3px 8px;border-radius:8px;background:rgba(60,79,193,.1);color:#3C4FC1;">共 5 起</span>
+          <span style="flex:1"></span>
+          <svg style="width:16px;height:16px;color:#59606B"><use href="#i-chevron"/></svg>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:16px;">
+          <!-- 对照日列 -->
+          <div style="flex:1;">
+            <div style="display:flex;align-items:center;gap:5px;margin-bottom:10px;"><span style="width:7px;height:7px;border-radius:50%;background:#C0C4CC;"></span><span style="font-size:12px;color:#7C838D;">对照 7/7</span></div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px;">
+              <div style="width:28px;height:28px;border-radius:50%;background:rgba(34,190,197,.15);display:flex;align-items:center;justify-content:center;color:#22BEC5;"><svg style="width:16px;height:16px"><use href="#i-run"/></svg></div>
+              <div style="flex:1;"><div style="font-size:13px;color:#2F3337;">跑步 45min</div><div style="font-size:11px;color:#9AA09F;">18:20</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <div style="width:28px;height:28px;border-radius:50%;background:rgba(168,141,232,.18);display:flex;align-items:center;justify-content:center;color:#A88DE8;"><svg style="width:16px;height:16px"><use href="#i-pill"/></svg></div>
+              <div style="flex:1;"><div style="font-size:13px;color:#2F3337;">布洛芬</div><div style="font-size:11px;color:#9AA09F;">21:00</div></div>
+            </div>
+          </div>
+          <div style="width:1px;background:#F0F0F0;"></div>
+          <!-- 今日列 -->
+          <div style="flex:1;">
+            <div style="display:flex;align-items:center;gap:5px;margin-bottom:10px;"><span style="width:7px;height:7px;border-radius:50%;background:#3C4FC1;"></span><span style="font-size:12px;color:#7C838D;">今日</span></div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px;">
+              <div style="width:28px;height:28px;border-radius:50%;background:rgba(245,166,35,.15);display:flex;align-items:center;justify-content:center;color:#F5A623;"><svg style="width:16px;height:16px"><use href="#i-moon"/></svg></div>
+              <div style="flex:1;"><div style="font-size:13px;color:#2F3337;">熬夜</div><div style="font-size:11px;color:#9AA09F;">01:40 入睡</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px;">
+              <div style="width:28px;height:28px;border-radius:50%;background:rgba(240,107,107,.15);display:flex;align-items:center;justify-content:center;color:#F06B6B;"><svg style="width:16px;height:16px"><use href="#i-bolt"/></svg></div>
+              <div style="flex:1;"><div style="font-size:13px;color:#2F3337;">头痛</div><div style="font-size:11px;color:#9AA09F;">10:15 · 中度</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <div style="width:28px;height:28px;border-radius:50%;background:rgba(34,190,197,.15);display:flex;align-items:center;justify-content:center;color:#22BEC5;"><svg style="width:16px;height:16px"><use href="#i-drop"/></svg></div>
+              <div style="flex:1;"><div style="font-size:13px;color:#2F3337;">咖啡 ×2</div><div style="font-size:11px;color:#9AA09F;">09:00 · 15:30</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+
+<!-- ============================================================
+     屏2 · HRV 对照详情 — HRVDetailView 复刻
+     ============================================================ -->
+<article class="device"
+         data-screen="evidence_hrv"
+         data-caption="HRV 对照详情 · 双日折线"
+         data-nav="← HRV 对照"
+         data-tab="none"
+         data-fab="false"
+         data-theme="light">
+  <div class="screen-pad fade">
+
+    <!-- 大标题 + 副标题 -->
+    <div style="font-size:26px;font-weight:800;color:#2F3337;padding-top:4px;">HRV</div>
+    <div style="font-size:13px;color:#59606B;margin-top:6px;">7月7日 与 今日 的对照</div>
+
+    <!-- 主卡：双日折线对比 -->
+    <div class="bg-white egoshadow" style="border-radius:16px;padding:16px;margin-top:16px;">
+      <div style="font-size:22px;font-weight:800;color:#2F3337;">全天 HRV</div>
+
+      <!-- 3 列 stats -->
+      <div style="display:flex;margin-top:16px;">
+        <div style="flex:1;">
+          <div style="display:flex;align-items:center;gap:5px;"><span style="width:7px;height:7px;border-radius:50%;background:#C0C4CC;"></span><span style="font-size:12px;color:#7C838D;">对照 7/7</span></div>
+          <div style="margin-top:6px;font-size:24px;font-weight:800;color:#2F3337;">61<span style="font-size:13px;font-weight:600;color:#9AA09F;">ms</span></div>
+        </div>
+        <div style="flex:1;">
+          <div style="display:flex;align-items:center;gap:5px;"><span style="width:7px;height:7px;border-radius:50%;background:#3C4FC1;"></span><span style="font-size:12px;color:#7C838D;">今日</span></div>
+          <div style="margin-top:6px;display:flex;align-items:baseline;gap:6px;"><span style="font-size:24px;font-weight:800;color:#2F3337;">52<span style="font-size:13px;font-weight:600;color:#9AA09F;">ms</span></span><span style="font-size:12px;font-weight:700;color:#F06B6B;">↓9</span></div>
+        </div>
+        <div style="flex:1;">
+          <div style="display:flex;align-items:center;gap:5px;"><span style="width:7px;height:7px;border-radius:50%;background:#4BC87E;"></span><span style="font-size:12px;color:#7C838D;">基线</span></div>
+          <div style="margin-top:6px;font-size:24px;font-weight:800;color:#2F3337;">58<span style="font-size:13px;font-weight:600;color:#9AA09F;">ms</span></div>
+        </div>
+      </div>
+
+      <!-- 图例 -->
+      <div style="display:flex;align-items:center;gap:16px;margin-top:16px;">
+        <div style="display:flex;align-items:center;gap:6px;"><span style="width:16px;height:3px;border-radius:2px;background:#3C4FC1;"></span><span style="font-size:11px;color:#7C838D;">今日</span></div>
+        <div style="display:flex;align-items:center;gap:6px;"><span style="width:16px;height:3px;border-radius:2px;background:#C0C4CC;"></span><span style="font-size:11px;color:#7C838D;">对照 7/7</span></div>
+        <div style="display:flex;align-items:center;gap:6px;"><span style="width:16px;height:0;border-top:2px dashed #4BC87E;"></span><span style="font-size:11px;color:#7C838D;">基线</span></div>
+      </div>
+
+      <!-- 大双日折线 SVG -->
+      <svg viewBox="0 0 320 168" style="width:100%;height:168px;margin-top:12px;overflow:visible;">
+        <!-- y 网格 -->
+        <line x1="8" y1="16" x2="312" y2="16" stroke="#F0F0F0" stroke-width="1"/>
+        <line x1="8" y1="60" x2="312" y2="60" stroke="#F0F0F0" stroke-width="1"/>
+        <line x1="8" y1="104" x2="312" y2="104" stroke="#F0F0F0" stroke-width="1"/>
+        <line x1="8" y1="148" x2="312" y2="148" stroke="#F0F0F0" stroke-width="1"/>
+        <!-- 基线 58ms -->
+        <line x1="8" y1="70" x2="312" y2="70" stroke="#4BC87E" stroke-width="1.5" stroke-dasharray="5 4" opacity=".6"/>
+        <text x="312" y="66" text-anchor="end" font-size="9" fill="#4BC87E">58</text>
+        <!-- 对照日线（灰，较高，清晨小幅） -->
+        <polyline fill="none" stroke="#C0C4CC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+          points="8,52 46,44 84,58 122,40 160,50 198,36 236,54 274,42 312,50"/>
+        <!-- 今日线（靛蓝，清晨大幅下探到 31ms） -->
+        <polyline fill="none" stroke="#3C4FC1" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"
+          points="8,78 46,96 84,116 122,90 160,84 198,72 236,88 274,80 312,86"/>
+        <!-- 今日清晨最低点标注 -->
+        <circle cx="84" cy="116" r="3.5" fill="#3C4FC1"/>
+        <text x="84" y="132" text-anchor="middle" font-size="9" fill="#F06B6B" font-weight="700">31 · 清晨</text>
+        <!-- x 轴标签 -->
+        <text x="8" y="163" font-size="9" fill="#9AA09F">0点</text>
+        <text x="122" y="163" text-anchor="middle" font-size="9" fill="#9AA09F">6点</text>
+        <text x="198" y="163" text-anchor="middle" font-size="9" fill="#9AA09F">12点</text>
+        <text x="312" y="163" text-anchor="end" font-size="9" fill="#9AA09F">24点</text>
+      </svg>
+
+      <!-- segment 分段 -->
+      <div style="display:flex;gap:8px;margin-top:16px;">
+        <div style="flex:1;text-align:center;padding:9px 0;border-radius:999px;background:#3C4FC1;color:#fff;font-size:14px;font-weight:600;">全天</div>
+        <div style="flex:1;text-align:center;padding:9px 0;border-radius:999px;background:#EFEFEF;color:#7C838D;font-size:14px;">夜间</div>
+        <div style="flex:1;text-align:center;padding:9px 0;border-radius:999px;background:#EFEFEF;color:#7C838D;font-size:14px;">睡眠</div>
+      </div>
+    </div>
+
+    <!-- 数值对照卡（均值 / 最高 / 最低） -->
+    <div class="bg-white egoshadow" style="border-radius:16px;padding:4px 16px;margin-top:16px;">
+      <div style="display:flex;align-items:center;padding:12px 0 10px;">
+        <div style="flex:1;font-size:13px;color:#9AA09F;"></div>
+        <div style="flex:1;text-align:right;font-size:12px;font-weight:600;color:#3C4FC1;">今日</div>
+        <div style="flex:1;text-align:right;font-size:12px;font-weight:600;color:#9AA09F;">对照 7/7</div>
+      </div>
+      <div style="display:flex;align-items:center;padding:12px 0;border-top:1px solid #F0F0F0;">
+        <div style="flex:1;font-size:14px;color:#2F3337;">均值</div>
+        <div style="flex:1;text-align:right;font-size:16px;font-weight:700;color:#2F3337;">52<span style="font-size:12px;color:#9AA09F;">ms</span></div>
+        <div style="flex:1;text-align:right;font-size:16px;font-weight:700;color:#7C838D;">61<span style="font-size:12px;color:#9AA09F;">ms</span></div>
+      </div>
+      <div style="display:flex;align-items:center;padding:12px 0;border-top:1px solid #F0F0F0;">
+        <div style="flex:1;font-size:14px;color:#2F3337;">最高</div>
+        <div style="flex:1;text-align:right;font-size:16px;font-weight:700;color:#2F3337;">78<span style="font-size:12px;color:#9AA09F;">ms</span></div>
+        <div style="flex:1;text-align:right;font-size:16px;font-weight:700;color:#7C838D;">89<span style="font-size:12px;color:#9AA09F;">ms</span></div>
+      </div>
+      <div style="display:flex;align-items:center;padding:12px 0;border-top:1px solid #F0F0F0;">
+        <div style="flex:1;font-size:14px;color:#2F3337;">最低</div>
+        <div style="flex:1;text-align:right;font-size:16px;font-weight:700;color:#F06B6B;">31<span style="font-size:12px;color:#9AA09F;">ms</span></div>
+        <div style="flex:1;text-align:right;font-size:16px;font-weight:700;color:#7C838D;">40<span style="font-size:12px;color:#9AA09F;">ms</span></div>
+      </div>
+    </div>
+
+    <!-- 小身体 AI 叙述卡 -->
+    <div class="bg-white egoshadow" style="border-radius:16px;padding:16px;margin-top:16px;">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#8FA0F5,#3C4FC1);display:flex;align-items:center;justify-content:center;color:#fff;"><svg style="width:15px;height:15px"><use href="#i-sparkle"/></svg></div>
+        <span style="font-size:14px;font-weight:700;color:#3C4FC1;">小身体 · 解读</span>
+      </div>
+      <div style="font-size:14px;color:#2F3337;line-height:1.68;margin-top:12px;">
+        你今天 HRV 全天低于对照日，尤其在清晨 5–7 点掉到 <span style="font-weight:700;color:#F06B6B;">31ms</span>（对照日同期约 48ms）。结合昨晚 <span style="font-weight:700;color:#3C4FC1;">01:40</span> 才入睡、静息心率比平时高 7bpm，身体大概率还没从疲劳里恢复过来。建议今天把训练强度压一压，早点休息。
+      </div>
+      <div style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:9px 14px;border-radius:999px;background:rgba(60,79,193,.08);color:#3C4FC1;">
+        <span style="font-size:13px;font-weight:600;">为什么清晨 HRV 掉得最厉害？</span>
+        <svg style="width:13px;height:13px"><use href="#i-chevron"/></svg>
+      </div>
+    </div>
+
+  </div>
+</article>

@@ -1,0 +1,50 @@
+<!-- 手表屏为特殊表盘形态，不走 .device iPhone 外壳，直接是完整 figure -->
+<figure class="phone-fig" style="width:230px;">
+  <div style="width:196px;height:238px;margin:0 auto;position:relative;">
+    <!-- 表身 -->
+    <div style="position:absolute;inset:0;background:#0b0b0d;border-radius:56px;box-shadow:0 26px 50px -20px rgba(24,30,80,.4);"></div>
+    <!-- 数码表冠 + 侧键 -->
+    <div style="position:absolute;right:-3px;top:74px;width:6px;height:40px;background:#26262b;border-radius:3px;"></div>
+    <div style="position:absolute;right:-3px;top:126px;width:6px;height:26px;background:#26262b;border-radius:3px;"></div>
+    <!-- 屏 -->
+    <div style="position:absolute;inset:11px;border-radius:46px;overflow:hidden;background:#000;color:#fff;padding:14px 16px 12px;">
+      <!-- 顶行：logo + 时间 -->
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <svg style="width:15px;height:15px;color:#8FA0F5"><use href="#xst-mark"/></svg>
+        <span style="font-size:14px;font-weight:700;color:#4BC87E;">9:41</span>
+      </div>
+      <!-- 一句话状态(手机算好，手表镜像) -->
+      <div style="margin-top:12px;">
+        <div style="font-size:11px;color:#9AA09F;">今日恢复</div>
+        <div style="display:flex;align-items:baseline;gap:6px;margin-top:2px;">
+          <span style="font-size:30px;font-weight:800;letter-spacing:-.02em;">偏低</span>
+          <span style="font-size:12px;font-weight:700;color:#F06B6B;">↓</span>
+        </div>
+        <div style="font-size:11.5px;color:#C0C4CC;margin-top:3px;line-height:1.35;">HRV 连续 3 天偏低<br/>建议今天降强度</div>
+      </div>
+      <!-- 3 指标迷你行 -->
+      <div style="display:flex;gap:6px;margin-top:12px;">
+        <div style="flex:1;background:#16171b;border-radius:12px;padding:7px 6px;text-align:center;">
+          <div style="color:#F06B6B;display:flex;justify-content:center;"><svg style="width:14px;height:14px"><use href="#i-heart"/></svg></div>
+          <div style="font-size:13px;font-weight:800;margin-top:2px;">52</div>
+          <div style="font-size:8.5px;color:#7C838D;">HRV</div>
+        </div>
+        <div style="flex:1;background:#16171b;border-radius:12px;padding:7px 6px;text-align:center;">
+          <div style="color:#F5A623;display:flex;justify-content:center;"><svg style="width:14px;height:14px"><use href="#i-moon"/></svg></div>
+          <div style="font-size:13px;font-weight:800;margin-top:2px;">7h</div>
+          <div style="font-size:8.5px;color:#7C838D;">睡眠</div>
+        </div>
+        <div style="flex:1;background:#16171b;border-radius:12px;padding:7px 6px;text-align:center;">
+          <div style="color:#4BC87E;display:flex;justify-content:center;"><svg style="width:14px;height:14px"><use href="#i-battery"/></svg></div>
+          <div style="font-size:13px;font-weight:800;margin-top:2px;">78</div>
+          <div style="font-size:8.5px;color:#7C838D;">电量</div>
+        </div>
+      </div>
+      <!-- 快速记录 -->
+      <div style="margin-top:10px;height:34px;border-radius:999px;background:linear-gradient(135deg,#4B54E0,#3C4FC1);display:flex;align-items:center;justify-content:center;gap:5px;font-size:12.5px;font-weight:700;">
+        <svg style="width:14px;height:14px"><use href="#i-plus"/></svg>记录一下
+      </div>
+    </div>
+  </div>
+  <figcaption><div class="cap-t">手表首页</div><div class="cap-s">镜像手机状态 · 快速记录</div></figcaption>
+</figure>

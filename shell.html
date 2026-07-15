@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="zh-CN">
+<!--
+  小身体 (原 Ego) — 可交互 App 原型 (单机模拟器)
+  ==================================================================
+  · 单台 iPhone，导航栈渲染一屏；点 tab / 卡片 / 返回像真机一样操作，数据写死
+  · chrome(状态栏/浮动 tabbar/AI 键/返回栏) 全局注入；每屏只是 body 模板
+  · 路由契约：data-screen(注册key) / data-go(跳转) / data-back(返回) / data-tab(切tab)
+  · 屏模板由 build_app.py 从 _frag/*.html 注入到 registry
+  · 不改任何 App 代码
+-->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>小身体 · 可交互原型</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='23' fill='%233E46CE'/%3E%3Cpath d='M50 20 C33 20 21 33 21 50 C21 65 32 76 46 77 C41 72 38 65 38 57 C38 45 47 36 59 36 C63 36 67 37 70 39 L54 22 C52.8 20.8 51.5 20 50 20 Z' fill='white'/%3E%3Cpath d='M60 40 C71 40 80 49 80 60 C80 71 71 80 60 80 C54 80 49 77 46 73 C55 72 62 64 62 54 C62 49 61 44 60 40 Z' fill='white'/%3E%3C/svg%3E" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme:{ extend:{ colors:{ ego:{
+      bg:'#F6F6F6',card:'#FFFFFF',ink:'#2F3337',ink2:'#59606B',ink3:'#7C838D',mute:'#9AA09F',hint:'#C0C4CC',
+      fill:'#EFEFEF',divider:'#EAEAEA',border:'#C9CDD2',primary:'#3C4FC1',primary2:'#586298',gold:'#FFB300',
+      danger:'#E85D5D',success:'#4BC87E',warn:'#E88A3C',line:'#5B8DEF',pink:'#EC6A8B',purple:'#A88DE8',
+      orange:'#F5A623',teal:'#22BEC5',red:'#F06B6B',green:'#4BC87E' }, brand:'#3E46CE' },
+      fontFamily:{ sys:['system-ui','-apple-system','BlinkMacSystemFont','PingFang SC','Helvetica Neue','sans-serif'] } } } };
+  </script>
+
+  <style>
+    :root{ --brand:#3E46CE; }
+    *{ box-sizing:border-box; } *::-webkit-scrollbar{ width:0;height:0; }
+    html,body{ margin:0; height:100%; }
+    body{ font-family:system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",sans-serif;
+      -webkit-font-smoothing:antialiased; color:#2F3337;
+      background:radial-gradient(120% 130% at 20% 0%, #2b3170 0%, #1b1e42 55%, #12142e 100%);
+      min-height:100%; }
+
+    /* ===== 舞台 ===== */
+    .stage{ min-height:100vh; display:flex; align-items:center; justify-content:center; gap:40px; padding:40px 20px; flex-wrap:wrap; }
+    .stage-left{ color:#fff; max-width:300px; }
+    .stage-left h1{ font-size:40px; font-weight:800; margin:0; letter-spacing:-.02em; display:flex; align-items:center; gap:14px; }
+    .stage-left h1 svg{ width:56px; height:56px; border-radius:14px; }
+    .stage-left .sub{ font-size:15px; opacity:.82; margin-top:14px; line-height:1.6; }
+    .stage-left .hint{ font-size:13px; opacity:.62; margin-top:18px; display:flex; align-items:center; gap:8px; }
+    .stage-left .tags{ display:flex; gap:8px; flex-wrap:wrap; margin-top:18px; }
+    .stage-left .tags span{ font-size:12px; font-weight:600; background:rgba(255,255,255,.14); padding:5px 11px; border-radius:999px; }
+    .stage-left a.gallery-link{ color:#fff; opacity:.8; font-size:13px; text-decoration:underline; text-underline-offset:3px; }
+
+    /* ===== iPhone ===== */
+    .device-wrap{ transform-origin:center; }
+    .phone{ width:320px; height:694px; position:relative; background:#0b0b0d; border-radius:50px; padding:5px;
+      box-shadow:0 40px 80px -28px rgba(10,14,50,.75), 0 8px 20px -8px rgba(0,0,0,.4); }
+    .phone-inner{ position:absolute; inset:5px; border-radius:45px; overflow:hidden; background:var(--sc-bg,#F6F6F6); }
+    .phone-inner.brand{ --sc-bg:var(--brand); }
+
+    .statusbar{ position:absolute; top:0; left:0; right:0; height:44px; z-index:40;
+      display:flex; align-items:center; justify-content:space-between; padding:0 24px;
+      font-size:13px; font-weight:700; color:var(--sb-fg,#2F3337); pointer-events:none; }
+    .phone-inner.brand ~ .statusbar, .statusbar.on-brand{ } /* set via JS */
+    .island{ position:absolute; top:10px; left:50%; transform:translateX(-50%); width:92px; height:26px; background:#000; border-radius:15px; z-index:41; }
+    .sig{ display:inline-flex; align-items:flex-end; gap:1.5px; height:10px; }
+    .sig i{ width:2.6px; background:currentColor; border-radius:1px; }
+    .sig i:nth-child(1){height:4px} .sig i:nth-child(2){height:6px} .sig i:nth-child(3){height:8px} .sig i:nth-child(4){height:10px}
+    .batt{ width:21px; height:11px; border:1.4px solid currentColor; border-radius:3px; position:relative; opacity:.9; }
+    .batt::after{ content:""; position:absolute; right:-3px; top:3px; width:1.6px; height:5px; background:currentColor; border-radius:1px; }
+    .batt i{ position:absolute; inset:1.4px; width:72%; background:currentColor; border-radius:1px; }
+
+    .navbar{ position:absolute; top:44px; left:0; right:0; height:46px; z-index:35;
+      display:flex; align-items:center; padding:0 10px; background:var(--nb-bg,#F6F6F6); opacity:0; pointer-events:none; transition:opacity .18s; }
+    .navbar.show{ opacity:1; pointer-events:auto; }
+    .navbar .nb-title{ position:absolute; left:0; right:0; text-align:center; font-size:16px; font-weight:700; color:var(--nb-fg,#2F3337); pointer-events:none; }
+    .navbar .nb-back{ width:36px; height:36px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 1px 5px rgba(0,0,0,.08); color:#2F3337; cursor:pointer; }
+
+    .viewport{ position:absolute; inset:0; overflow:hidden; }
+    .layer{ position:absolute; inset:0; overflow-y:auto; overflow-x:hidden; padding-top:44px; background:var(--sc-bg,#F6F6F6); }
+    .layer.brand{ background:var(--brand); color:#fff; }
+    .layer.has-nav{ padding-top:90px; }
+    .layer .screen-pad{ padding:8px 18px 120px; }
+
+    /* dock: 浮动 tabbar + AI 键 */
+    .dock{ position:absolute; left:14px; right:14px; bottom:15px; z-index:38; display:flex; gap:8px; align-items:center; opacity:0; pointer-events:none; transition:opacity .2s; }
+    .dock.show{ opacity:1; pointer-events:auto; }
+    .tabbar{ flex:1; height:58px; background:#fff;
+      border-radius:29px; box-shadow:0 4px 10px rgba(0,0,0,.06), 0 0 0 .5px rgba(0,0,0,.03);
+      display:flex; align-items:stretch; gap:4px; padding:4px; }
+    .tab{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; color:#2F3337; font-size:10px; font-weight:600; flex:1; cursor:pointer; border-radius:999px; }
+    .tab.on{ color:#3C4FC1; background:#EFEFEF; }
+    .tab svg{ width:19px; height:19px; }
+    .fab{ width:58px; height:58px; border-radius:50%; flex:none; background:#fff;
+      box-shadow:0 4px 10px rgba(0,0,0,.06), 0 0 0 .5px rgba(0,0,0,.03); display:flex; align-items:center; justify-content:center; cursor:pointer; }
+    .fab svg{ width:34px; height:34px; color:#3C4FC1; }
+
+    .home-ind{ position:absolute; bottom:7px; left:50%; transform:translateX(-50%); width:112px; height:4px; border-radius:3px; background:rgba(0,0,0,.28); z-index:42; }
+    .phone-inner.brand .home-ind, .home-ind.on-brand{ background:rgba(255,255,255,.6); }
+
+    /* ===== 转场 ===== */
+    @keyframes inRight{ from{transform:translateX(100%)} to{transform:translateX(0)} }
+    @keyframes outLeftHold{ from{transform:translateX(0)} to{transform:translateX(-22%)} }
+    @keyframes inLeftBack{ from{transform:translateX(-22%)} to{transform:translateX(0)} }
+    @keyframes outRight{ from{transform:translateX(0)} to{transform:translateX(100%)} }
+    @keyframes inUp{ from{transform:translateY(100%)} to{transform:translateY(0)} }
+    @keyframes outDown{ from{transform:translateY(0)} to{transform:translateY(100%)} }
+    @keyframes fadeIn{ from{opacity:0} to{opacity:1} }
+    @keyframes fadeOut{ from{opacity:1} to{opacity:0} }
+    .anim-inRight{ animation:inRight .34s cubic-bezier(.32,.72,0,1) both; z-index:2; }
+    .anim-outHold{ animation:outLeftHold .34s cubic-bezier(.32,.72,0,1) both; }
+    .anim-inBack{ animation:inLeftBack .3s cubic-bezier(.32,.72,0,1) both; }
+    .anim-outRight{ animation:outRight .3s cubic-bezier(.32,.72,0,1) both; z-index:2; }
+    .anim-inUp{ animation:inUp .36s cubic-bezier(.32,.72,0,1) both; z-index:3; }
+    .anim-outDown{ animation:outDown .3s cubic-bezier(.32,.72,0,1) both; z-index:3; }
+    .anim-fadeIn{ animation:fadeIn .28s ease both; z-index:2; }
+    .anim-fadeOut{ animation:fadeOut .24s ease both; z-index:3; }
+
+    #registry{ display:none; }
+    @media (max-width:820px){ .device-wrap{ transform:scale(1); } .stage{ gap:20px; } }
+  </style>
+</head>
+<body class="font-sys">
+
+  <!--SPRITE-->
+  <!-- 真机 tabbar 图标(复刻 icon_today/trend/event 资源) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <symbol id="i-tab-today" viewBox="0 0 24 24"><rect x="4" y="4.5" width="16" height="15" rx="4.2" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M8.4 12.2l2.4 2.4 4.8-5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-tab-trend" viewBox="0 0 24 24"><rect x="4" y="13" width="3.6" height="7" rx="1.3" fill="currentColor"/><rect x="10.2" y="8.5" width="3.6" height="11.5" rx="1.3" fill="currentColor"/><rect x="16.4" y="4.5" width="3.6" height="15.5" rx="1.3" fill="currentColor"/></symbol>
+    <symbol id="i-tab-event" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="16" rx="3.2" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M8.5 9.6l1.4 1.4 2.3-2.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 15.2l1.4 1.4 2.3-2.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.4 9.6h2.2M14.4 15.2h2.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  </defs></svg>
+
+  <div class="stage">
+    <div class="stage-left">
+      <h1><svg viewBox="0 0 100 100"><use href="#xst-icon"/></svg>小身体</h1>
+      <div class="sub">原 Ego 品牌焕新 · <b>可交互原型</b>。像用真机一样点：切 tab、点卡片进详情、返回、点右下 AI 键对话。数据均为演示 mock。</div>
+      <div class="tags"><span>📱 全功能可交互</span><span>🎨 UI 对齐真机</span><span>🧪 Mock 数据</span></div>
+      <div class="hint">👉 点桌面上的「小身体」图标启动</div>
+      <div style="margin-top:22px"><a class="gallery-link" href="gallery.html">或查看全部 22 屏一览（静态画廊）→</a></div>
+    </div>
+
+    <div class="device-wrap">
+      <div class="phone">
+        <div class="phone-inner" id="pinner">
+          <div class="viewport" id="viewport"></div>
+          <div class="statusbar" id="statusbar"><span>9:41</span><span style="display:flex;align-items:center;gap:5px"><span class="sig"><i></i><i></i><i></i><i></i></span><span style="font-size:11px;font-weight:800">5G</span><span class="batt"><i></i></span></span></div>
+          <div class="island"></div>
+          <div class="navbar" id="navbar"><div class="nb-back" data-back><svg style="width:18px;height:18px"><use href="#i-chevron-left"/></svg></div><div class="nb-title" id="nbtitle"></div></div>
+          <div class="dock" id="dock">
+            <div class="tabbar">
+              <div class="tab" data-tab="today"><svg><use href="#i-tab-today"/></svg><span>今日</span></div>
+              <div class="tab" data-tab="trends"><svg><use href="#i-tab-trend"/></svg><span>趋势</span></div>
+              <div class="tab" data-tab="events"><svg><use href="#i-tab-event"/></svg><span>事件</span></div>
+            </div>
+            <div class="fab" data-go="ai_chat"><svg><use href="#xst-mark"/></svg></div>
+          </div>
+          <div class="home-ind" id="homeind"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 屏幕注册表(由 build_app.py 注入) -->
+  <div id="registry"><!--SCREENS--></div>
+
+  <script>
+  (function(){
+    const REG = {};
+    document.querySelectorAll('#registry template').forEach(t => REG[t.dataset.screen] = t);
+
+    const MODE = {
+      ai_chat:'up', ai_voice:'up', event_add:'up', profile:'up', paywall:'up', notif_center:'fade',
+    };
+    const TAB_ROOTS = ['today','trends','events'];
+
+    const vp = document.getElementById('viewport');
+    const navbar = document.getElementById('navbar');
+    const nbtitle = document.getElementById('nbtitle');
+    const dock = document.getElementById('dock');
+    const pinner = document.getElementById('pinner');
+    const statusbar = document.getElementById('statusbar');
+    const homeind = document.getElementById('homeind');
+
+    let stack = [];   // [{key, el, mode}]
+    let tabState = { today:['today'], trends:['trends'], events:['events'] }; // per-tab push history (keys)
+    let activeTab = null;
+    let busy = false;
+
+    function meta(key){ const t = REG[key]; return { tab:t?.dataset.tab||'none', nav:t?.dataset.nav||'none', theme:t?.dataset.theme||'light' }; }
+
+    function makeLayer(key){
+      const t = REG[key]; if(!t) { console.warn('no screen',key); return null; }
+      const el = document.createElement('div');
+      el.className = 'layer' + (t.dataset.theme==='brand'?' brand':'') + (t.dataset.nav && t.dataset.nav!=='none'?' has-nav':'');
+      el.dataset.key = key;
+      el.appendChild(t.content.cloneNode(true));
+      return el;
+    }
+
+    function updateChrome(){
+      const top = stack[stack.length-1]; if(!top) return;
+      const m = meta(top.key);
+      // theme
+      pinner.classList.toggle('brand', m.theme==='brand');
+      const onBrand = m.theme==='brand';
+      statusbar.style.setProperty('--sb-fg', onBrand ? '#fff' : '#2F3337');
+      statusbar.style.background = onBrand ? 'transparent' : 'var(--sc-bg,#F6F6F6)';
+      homeind.classList.toggle('on-brand', onBrand);
+      // navbar
+      if(m.nav && m.nav!=='none'){
+        const back = m.nav.startsWith('←');
+        nbtitle.textContent = back ? m.nav.slice(1).trim() : m.nav;
+        navbar.querySelector('.nb-back').style.display = (stack.length>1||back)?'flex':'none';
+        navbar.style.setProperty('--nb-bg', onBrand?'transparent':'#F6F6F6');
+        navbar.style.setProperty('--nb-fg', onBrand?'#fff':'#2F3337');
+        navbar.classList.add('show');
+      } else {
+        navbar.classList.remove('show');
+      }
+      // dock (tabbar+fab): 仅一级 tab 根屏显示
+      const isTabRoot = TAB_ROOTS.includes(top.key) && stack.length===1;
+      dock.classList.toggle('show', isTabRoot);
+      if(isTabRoot){
+        dock.querySelectorAll('.tab').forEach(tb => tb.classList.toggle('on', tb.dataset.tab===top.key));
+      }
+    }
+
+    function animate(el, cls){ return new Promise(res=>{ el.classList.add(cls);
+      const done=()=>{ el.classList.remove(cls); el.removeEventListener('animationend',done); res(); };
+      el.addEventListener('animationend',done); setTimeout(done,600); }); }
+
+    async function go(key, opts){
+      if(busy || !REG[key]) return; busy=true;
+      opts = opts || {};
+      const mode = opts.mode || MODE[key] || 'push';
+      const incoming = makeLayer(key);
+      const outgoing = stack.length ? stack[stack.length-1].el : null;
+      vp.appendChild(incoming);
+
+      if(mode==='reset'){
+        stack.push({key, el:incoming, mode});
+        updateChrome();
+        await animate(incoming,'anim-fadeIn');
+        // 清掉底下所有旧层
+        stack.slice(0,-1).forEach(s=>s.el.remove());
+        stack = [{key, el:incoming, mode:'root'}];
+        // 若是 tab 根，重置该 tab 历史
+        if(TAB_ROOTS.includes(key)) activeTab = key;
+        updateChrome();  // 用清栈后的正确 stack 长度重算 chrome(dock 显隐)
+      } else if(mode==='up'){
+        stack.push({key, el:incoming, mode});
+        updateChrome();
+        await animate(incoming,'anim-inUp');
+      } else if(mode==='fade'){
+        stack.push({key, el:incoming, mode});
+        updateChrome();
+        await animate(incoming,'anim-fadeIn');
+      } else { // push
+        stack.push({key, el:incoming, mode});
+        updateChrome();
+        const p=[animate(incoming,'anim-inRight')];
+        if(outgoing) p.push(animate(outgoing,'anim-outHold'));
+        await Promise.all(p);
+      }
+      incoming.scrollTop = 0;
+      busy=false;
+      // splash 自动前进到引导
+      if(key==='splash'){ setTimeout(()=>{ const t=stack[stack.length-1]; if(t&&t.key==='splash') go('onb_welcome',{mode:'reset'}); }, 1500); }
+    }
+
+    async function back(){
+      if(busy || stack.length<=1) return; busy=true;
+      const leaving = stack.pop();
+      const below = stack[stack.length-1];
+      updateChrome();
+      if(leaving.mode==='up'){ await animate(leaving.el,'anim-outDown'); }
+      else if(leaving.mode==='fade'){ await animate(leaving.el,'anim-fadeOut'); }
+      else { const p=[animate(leaving.el,'anim-outRight')]; if(below) p.push(animate(below.el,'anim-inBack')); await Promise.all(p); }
+      leaving.el.remove();
+      busy=false;
+    }
+
+    function switchTab(tab){
+      if(busy || !TAB_ROOTS.includes(tab)) return;
+      if(stack.length===1 && stack[0].key===tab) return;
+      // 简化：切 tab = fade 到该 tab 根屏
+      go(tab, {mode:'reset'});
+    }
+
+    // 事件委托
+    document.addEventListener('click', e=>{
+      const back_ = e.target.closest('[data-back]'); if(back_){ back(); return; }
+      const tab_ = e.target.closest('[data-tab]'); if(tab_){ switchTab(tab_.dataset.tab); return; }
+      const go_ = e.target.closest('[data-go]'); if(go_){ go(go_.dataset.go, { mode: go_.dataset.mode || undefined }); return; }
+    });
+
+    // 启动：桌面 springboard
+    window.__boot = function(){ stack=[]; vp.innerHTML=''; go('springboard',{mode:'reset'}); };
+    window.__go = go;  // 供 splash 计时器等调用
+
+    // 自适应缩放：手机始终完整入视口、且尽量大
+    function fitPhone(){
+      const s = Math.min(1.3, Math.max(0.62, (window.innerHeight - 60) / 694));
+      const w = document.querySelector('.device-wrap'); if(w) w.style.transform = 'scale('+s+')';
+    }
+    window.addEventListener('resize', fitPhone); fitPhone();
+
+    window.__boot();
+  })();
+  </script>
+</body>
+</html>

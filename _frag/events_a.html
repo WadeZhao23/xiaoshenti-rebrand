@@ -1,0 +1,203 @@
+<!-- 事件页 (tab 根) —— 按真机复刻：分类分组卡片 -->
+<article class="device" data-screen="events" data-nav="none" data-tab="events" data-fab="true">
+  <div class="screen-pad" style="padding:8px 16px 120px;">
+    <!-- 顶栏：日历(白方) + 头像(圆) -->
+    <div style="display:flex;align-items:center;gap:10px;padding-top:4px;">
+      <div style="flex:1"></div>
+      <div style="width:38px;height:38px;border-radius:12px;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.05);display:flex;align-items:center;justify-content:center;color:#2F3337;"><svg style="width:20px;height:20px"><use href="#i-calendar"/></svg></div>
+      <div data-go="profile" style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8FA0F5,#3C4FC1);display:flex;align-items:center;justify-content:center;color:#fff;overflow:hidden;cursor:pointer;"><svg style="width:26px;height:26px;margin-top:4px"><use href="#i-user"/></svg></div>
+    </div>
+
+    <!-- 标题 事件 + ? -->
+    <div style="display:flex;align-items:center;gap:9px;margin-top:12px;">
+      <div style="font-size:28px;font-weight:800;color:#2F3337;">事件</div>
+      <div style="width:18px;height:18px;border-radius:50%;border:1.4px solid #9AA09F;color:#9AA09F;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;">?</div>
+    </div>
+
+    <!-- 添加事件 蓝胶囊 + 搜索圆 -->
+    <div style="display:flex;align-items:center;gap:11px;margin-top:14px;">
+      <div data-go="event_add" style="flex:1;position:relative;height:46px;border-radius:999px;background:#3C4FC1;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 14px -4px rgba(60,79,193,.4);">
+        <span style="font-size:16px;font-weight:700;color:#fff;">添加事件</span>
+        <span style="position:absolute;right:16px;top:0;bottom:0;display:flex;align-items:center;color:#fff;"><svg style="width:19px;height:19px"><use href="#i-plus"/></svg></span>
+      </div>
+      <div style="width:46px;height:46px;border-radius:50%;background:#F6F6F6;border:1.4px solid #E0E0E0;display:flex;align-items:center;justify-content:center;color:#9AA09F;"><svg style="width:19px;height:19px"><use href="#i-search"/></svg></div>
+    </div>
+
+    <!-- ===== 症状 ===== -->
+    <div style="font-size:16px;font-weight:700;color:#2F3337;margin:24px 2px 12px;">症状</div>
+    <div style="display:flex;gap:11px;overflow-x:auto;padding-bottom:2px;">
+      <div style="min-width:134px;background:#fff;border-radius:16px;padding:13px;box-shadow:0 4px 10px rgba(0,0,0,.05);flex:none;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;">
+          <div style="width:38px;height:38px;border-radius:50%;background:#F0555F;color:#fff;display:flex;align-items:center;justify-content:center;"><svg style="width:20px;height:20px"><use href="#i-flame"/></svg></div>
+          <svg style="width:16px;height:16px;color:#C0C4CC"><use href="#i-chevron"/></svg>
+        </div>
+        <div style="font-size:15px;font-weight:700;color:#2F3337;margin-top:11px;">头痛</div>
+        <div style="font-size:11px;color:#9AA09F;margin-top:3px;line-height:1.35;">距离上次头痛<br>过去 35 天</div>
+      </div>
+      <div style="min-width:134px;background:#fff;border-radius:16px;padding:13px;box-shadow:0 4px 10px rgba(0,0,0,.05);flex:none;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;">
+          <div style="width:38px;height:38px;border-radius:50%;background:#F0555F;color:#fff;display:flex;align-items:center;justify-content:center;"><svg style="width:20px;height:20px"><use href="#i-drop"/></svg></div>
+          <svg style="width:16px;height:16px;color:#C0C4CC"><use href="#i-chevron"/></svg>
+        </div>
+        <div style="font-size:15px;font-weight:700;color:#2F3337;margin-top:11px;">发烧</div>
+        <div style="font-size:11px;color:#9AA09F;margin-top:3px;line-height:1.35;">距离上次发烧<br>过去 92 天</div>
+      </div>
+      <div style="min-width:134px;background:#fff;border-radius:16px;padding:13px;box-shadow:0 4px 10px rgba(0,0,0,.05);flex:none;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;">
+          <div style="width:38px;height:38px;border-radius:50%;background:#F0555F;color:#fff;display:flex;align-items:center;justify-content:center;"><svg style="width:20px;height:20px"><use href="#i-bolt"/></svg></div>
+          <svg style="width:16px;height:16px;color:#C0C4CC"><use href="#i-chevron"/></svg>
+        </div>
+        <div style="font-size:15px;font-weight:700;color:#2F3337;margin-top:11px;">头晕</div>
+        <div style="font-size:11px;color:#9AA09F;margin-top:3px;line-height:1.35;">距离上次头晕<br>过去 51 天</div>
+      </div>
+    </div>
+
+    <!-- ===== 医疗检查 ===== -->
+    <div style="font-size:16px;font-weight:700;color:#2F3337;margin:24px 2px 12px;">医疗检查</div>
+    <div style="display:flex;gap:11px;overflow-x:auto;padding-bottom:2px;">
+      <div data-go="checkup_detail" style="min-width:134px;background:#fff;border-radius:16px;padding:13px;box-shadow:0 4px 10px rgba(0,0,0,.05);flex:none;cursor:pointer;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;">
+          <div style="width:38px;height:38px;border-radius:50%;background:#5B8DEF;color:#fff;display:flex;align-items:center;justify-content:center;"><svg style="width:20px;height:20px"><use href="#i-drop"/></svg></div>
+          <svg style="width:16px;height:16px;color:#C0C4CC"><use href="#i-chevron"/></svg>
+        </div>
+        <div style="font-size:15px;font-weight:700;color:#2F3337;margin-top:11px;">血常规</div>
+        <div style="font-size:11px;color:#9AA09F;margin-top:3px;line-height:1.35;">距离上次血常规<br>过去 32 天</div>
+      </div>
+      <div style="min-width:134px;background:#fff;border-radius:16px;padding:13px;box-shadow:0 4px 10px rgba(0,0,0,.05);flex:none;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;">
+          <div style="width:38px;height:38px;border-radius:50%;background:#5B8DEF;color:#fff;display:flex;align-items:center;justify-content:center;"><svg style="width:20px;height:20px"><use href="#i-drop"/></svg></div>
+          <svg style="width:16px;height:16px;color:#C0C4CC"><use href="#i-chevron"/></svg>
+        </div>
+        <div style="font-size:15px;font-weight:700;color:#2F3337;margin-top:11px;">血糖</div>
+        <div style="font-size:11px;color:#9AA09F;margin-top:3px;line-height:1.35;">距离上次血糖<br>过去 39 天</div>
+      </div>
+      <div style="min-width:134px;background:#fff;border-radius:16px;padding:13px;box-shadow:0 4px 10px rgba(0,0,0,.05);flex:none;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;">
+          <div style="width:38px;height:38px;border-radius:50%;background:#5B8DEF;color:#fff;display:flex;align-items:center;justify-content:center;"><svg style="width:20px;height:20px"><use href="#i-wave"/></svg></div>
+          <svg style="width:16px;height:16px;color:#C0C4CC"><use href="#i-chevron"/></svg>
+        </div>
+        <div style="font-size:15px;font-weight:700;color:#2F3337;margin-top:11px;">心电图</div>
+        <div style="font-size:11px;color:#9AA09F;margin-top:3px;line-height:1.35;">距离上次心电图<br>过去 32 天</div>
+      </div>
+    </div>
+
+    <!-- ===== 用药 ===== -->
+    <div style="font-size:16px;font-weight:700;color:#2F3337;margin:24px 2px 12px;">用药</div>
+    <div style="display:flex;gap:11px;overflow-x:auto;padding-bottom:2px;">
+      <div data-go="med_detail" style="min-width:134px;background:#fff;border-radius:16px;padding:13px;box-shadow:0 4px 10px rgba(0,0,0,.05);flex:none;cursor:pointer;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;">
+          <div style="width:38px;height:38px;border-radius:50%;background:#A88DE8;color:#fff;display:flex;align-items:center;justify-content:center;"><svg style="width:20px;height:20px"><use href="#i-pill"/></svg></div>
+          <svg style="width:16px;height:16px;color:#C0C4CC"><use href="#i-chevron"/></svg>
+        </div>
+        <div style="font-size:15px;font-weight:700;color:#2F3337;margin-top:11px;">布洛芬</div>
+        <div style="font-size:11px;color:#9AA09F;margin-top:3px;line-height:1.35;">正在服用<br>第 12 天</div>
+      </div>
+      <div style="min-width:134px;background:#fff;border-radius:16px;padding:13px;box-shadow:0 4px 10px rgba(0,0,0,.05);flex:none;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;">
+          <div style="width:38px;height:38px;border-radius:50%;background:#A88DE8;color:#fff;display:flex;align-items:center;justify-content:center;"><svg style="width:20px;height:20px"><use href="#i-pill"/></svg></div>
+          <svg style="width:16px;height:16px;color:#C0C4CC"><use href="#i-chevron"/></svg>
+        </div>
+        <div style="font-size:15px;font-weight:700;color:#2F3337;margin-top:11px;">维生素 D</div>
+        <div style="font-size:11px;color:#9AA09F;margin-top:3px;line-height:1.35;">补剂<br>每日一次</div>
+      </div>
+    </div>
+
+    <!-- ===== 女性健康 ===== -->
+    <div style="font-size:16px;font-weight:700;color:#2F3337;margin:24px 2px 12px;">女性健康</div>
+    <div style="display:flex;gap:11px;overflow-x:auto;padding-bottom:2px;">
+      <div style="min-width:134px;background:#fff;border-radius:16px;padding:13px;box-shadow:0 4px 10px rgba(0,0,0,.05);flex:none;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;">
+          <div style="width:38px;height:38px;border-radius:50%;background:#EC6A8B;color:#fff;display:flex;align-items:center;justify-content:center;"><svg style="width:20px;height:20px"><use href="#i-drop"/></svg></div>
+          <svg style="width:16px;height:16px;color:#C0C4CC"><use href="#i-chevron"/></svg>
+        </div>
+        <div style="font-size:15px;font-weight:700;color:#2F3337;margin-top:11px;">月经开始</div>
+        <div style="font-size:11px;color:#9AA09F;margin-top:3px;line-height:1.35;">距离上次月经开始<br>过去 34 天</div>
+      </div>
+      <div style="min-width:134px;background:#fff;border-radius:16px;padding:13px;box-shadow:0 4px 10px rgba(0,0,0,.05);flex:none;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;">
+          <div style="width:38px;height:38px;border-radius:50%;background:#EC6A8B;color:#fff;display:flex;align-items:center;justify-content:center;"><svg style="width:20px;height:20px"><use href="#i-drop"/></svg></div>
+          <svg style="width:16px;height:16px;color:#C0C4CC"><use href="#i-chevron"/></svg>
+        </div>
+        <div style="font-size:15px;font-weight:700;color:#2F3337;margin-top:11px;">经期不适</div>
+        <div style="font-size:11px;color:#9AA09F;margin-top:3px;line-height:1.35;">距离上次经期不适<br>过去 58 天</div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<article class="device" data-screen="event_add" data-nav="← 新事件" data-tab="none" data-fab="false">
+  <div class="screen-pad" style="padding-bottom:120px;">
+    <div style="font-size:30px;font-weight:800;color:#2F3337;margin-top:2px;">头痛</div>
+    <div style="font-size:13px;color:#59606B;margin-top:6px;">填写详细内容，小身体将会帮你结构化数据</div>
+
+    <div style="display:flex;gap:9px;margin-top:16px;overflow:hidden;">
+      <div style="font-size:13px;font-weight:600;padding:7px 15px;border-radius:999px;background:#3C4FC1;color:#fff;white-space:nowrap;">头痛</div>
+      <div style="font-size:13px;font-weight:500;padding:7px 15px;border-radius:999px;background:#EFEFEF;color:#7C838D;white-space:nowrap;">腹痛</div>
+      <div style="font-size:13px;font-weight:500;padding:7px 15px;border-radius:999px;background:#EFEFEF;color:#7C838D;white-space:nowrap;">发烧</div>
+      <div style="font-size:13px;font-weight:500;padding:7px 15px;border-radius:999px;background:#EFEFEF;color:#7C838D;white-space:nowrap;">头晕</div>
+      <div style="font-size:13px;font-weight:500;padding:7px 15px;border-radius:999px;background:#EFEFEF;color:#7C838D;white-space:nowrap;">乏力</div>
+    </div>
+
+    <div style="font-size:17px;font-weight:700;color:#2F3337;margin:24px 4px 10px;">必填信息</div>
+    <div class="bg-white egoshadow" style="border-radius:16px;">
+      <div style="display:flex;align-items:center;padding:15px 16px;">
+        <div style="flex:1;font-size:15px;color:#2F3337;">发生时间</div>
+        <div style="font-size:15px;color:#59606B;margin-right:8px;">7月14日 21:30</div>
+        <svg style="width:16px;height:16px;color:#7C838D;margin-right:2px;"><use href="#i-calendar"/></svg>
+        <svg style="width:17px;height:17px;color:#C0C4CC"><use href="#i-chevron"/></svg>
+      </div>
+    </div>
+
+    <div style="font-size:17px;font-weight:700;color:#2F3337;margin:22px 4px 10px;">选填信息</div>
+    <div class="bg-white egoshadow" style="border-radius:16px;">
+      <div style="display:flex;align-items:center;padding:15px 16px;">
+        <div style="flex:1;font-size:15px;color:#2F3337;">持续时间</div>
+        <div style="font-size:15px;color:#59606B;margin-right:8px;">1 小时 30 分</div>
+        <svg style="width:17px;height:17px;color:#C0C4CC"><use href="#i-chevron"/></svg>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:16px;"></div>
+      <div style="display:flex;align-items:center;padding:15px 16px;">
+        <div style="flex:1;font-size:15px;color:#2F3337;">部位</div>
+        <div style="font-size:15px;color:#59606B;margin-right:8px;">太阳穴</div>
+        <svg style="width:17px;height:17px;color:#C0C4CC"><use href="#i-chevron"/></svg>
+      </div>
+      <div style="height:1px;background:#F0F0F0;margin-left:16px;"></div>
+      <div style="padding:16px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div style="font-size:15px;color:#2F3337;">强度</div>
+          <div style="font-size:15px;font-weight:800;color:#3C4FC1;">6 <span style="font-size:13px;color:#9AA09F;font-weight:600;">/ 10</span></div>
+        </div>
+        <div style="display:flex;gap:5px;margin-top:12px;">
+          <div style="flex:1;height:7px;border-radius:999px;background:#3C4FC1;"></div>
+          <div style="flex:1;height:7px;border-radius:999px;background:#3C4FC1;"></div>
+          <div style="flex:1;height:7px;border-radius:999px;background:#3C4FC1;"></div>
+          <div style="flex:1;height:7px;border-radius:999px;background:#3C4FC1;"></div>
+          <div style="flex:1;height:7px;border-radius:999px;background:#3C4FC1;"></div>
+          <div style="flex:1;height:7px;border-radius:999px;background:#3C4FC1;"></div>
+          <div style="flex:1;height:7px;border-radius:999px;background:#EFEFEF;"></div>
+          <div style="flex:1;height:7px;border-radius:999px;background:#EFEFEF;"></div>
+          <div style="flex:1;height:7px;border-radius:999px;background:#EFEFEF;"></div>
+          <div style="flex:1;height:7px;border-radius:999px;background:#EFEFEF;"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:11px;color:#9AA09F;">
+          <span>1 轻微</span>
+          <span>10 剧烈</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="font-size:17px;font-weight:700;color:#2F3337;margin:22px 4px 10px;">备注</div>
+    <div class="bg-white egoshadow" style="border-radius:16px;padding:14px;">
+      <div style="min-height:82px;border-radius:12px;background:#F7F7F7;border:1px solid #EAEAEA;padding:12px 13px;font-size:14px;line-height:1.55;color:#59606B;">
+        下午两点会议后开始，太阳穴一跳一跳的胀痛感，服了一片布洛芬后缓解。
+      </div>
+    </div>
+  </div>
+
+  <div style="position:absolute;left:0;right:0;bottom:0;padding:14px 18px 30px;background:linear-gradient(to top,#F6F6F6 62%,rgba(246,246,246,0));">
+    <div data-back style="height:50px;border-radius:999px;background:#3C4FC1;display:flex;align-items:center;justify-content:center;gap:8px;color:#fff;cursor:pointer;">
+      <svg style="width:19px;height:19px"><use href="#i-check"/></svg>
+      <span style="font-size:16px;font-weight:700;">保存</span>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,188 @@
+<!-- ①  欢迎登录 -->
+<article class="device" data-caption="欢迎登录 · 手机号 / Apple" data-nav="none" data-tab="none" data-fab="false" data-theme="light" data-screen="onb_welcome">
+  <div class="screen-pad fade" style="display:flex;flex-direction:column;min-height:100%;padding-top:24px;">
+
+    <!-- logo + 品牌 -->
+    <div style="display:flex;flex-direction:column;align-items:center;margin-top:34px;">
+      <div style="position:relative;">
+        <div style="position:absolute;inset:-16px;border-radius:30px;background:rgba(60,79,193,.08);"></div>
+        <svg viewBox="0 0 100 100" style="position:relative;width:72px;height:72px;border-radius:20px;box-shadow:0 14px 32px -10px rgba(60,79,193,.5)"><use href="#xst-icon"/></svg>
+      </div>
+      <div style="font-size:27px;font-weight:800;color:#2F3337;margin-top:20px;letter-spacing:.04em;">小身体</div>
+      <div style="font-size:14px;color:#59606B;margin-top:9px;">读懂身体的每一次波动</div>
+    </div>
+
+    <!-- 手机号输入 -->
+    <div style="margin-top:44px;">
+      <div style="display:flex;align-items:center;height:54px;border-radius:14px;background:#EFEFEF;padding:0 16px;">
+        <span style="font-size:16px;font-weight:600;color:#2F3337;">+86</span>
+        <div style="width:1px;height:22px;background:#C9CDD2;margin:0 14px;"></div>
+        <span style="font-size:16px;color:#C0C4CC;flex:1;">请输入手机号</span>
+      </div>
+    </div>
+
+    <!-- 获取验证码 主按钮 -->
+    <div data-go="onb_health" style="height:50px;border-radius:999px;background:#3C4FC1;color:#fff;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:16px;cursor:pointer;">
+      获取验证码
+    </div>
+
+    <!-- 分隔 或 -->
+    <div style="display:flex;align-items:center;gap:12px;margin-top:26px;">
+      <div style="flex:1;height:1px;background:#EAEAEA;"></div>
+      <span style="font-size:12px;color:#9AA09F;">或</span>
+      <div style="flex:1;height:1px;background:#EAEAEA;"></div>
+    </div>
+
+    <!-- Apple 登录 黑色按钮 -->
+    <div data-go="onb_health" style="height:50px;border-radius:999px;background:#000;color:#fff;font-size:16px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:22px;cursor:pointer;">
+      <svg viewBox="0 0 24 24" style="width:19px;height:19px" fill="currentColor"><path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zM20.93 17.14c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.902-1.01.635 0 2.94.06 4.42 2.22-.126.08-2.57 1.5-2.57 4.5 0 3.5 3.07 4.74 3.116 4.76z"/></svg>
+      通过 Apple 登录
+    </div>
+
+    <div style="flex:1;min-height:24px;"></div>
+
+    <!-- 协议勾选 -->
+    <div style="display:flex;align-items:flex-start;gap:8px;padding:0 4px;margin-top:20px;">
+      <div style="width:16px;height:16px;border-radius:5px;background:#3C4FC1;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;color:#fff;">
+        <svg style="width:11px;height:11px"><use href="#i-check"/></svg>
+      </div>
+      <div style="font-size:12px;color:#9AA09F;line-height:1.5;">
+        登录即同意 <span style="color:#3C4FC1;">《用户协议》</span> 与 <span style="color:#3C4FC1;">《隐私政策》</span>
+      </div>
+    </div>
+
+  </div>
+</article>
+
+<!-- ②  HealthKit 授权 -->
+<article class="device" data-caption="数据关联 · HealthKit 授权" data-nav="none" data-tab="none" data-fab="false" data-theme="light" data-screen="onb_health">
+  <div class="screen-pad fade" style="display:flex;flex-direction:column;min-height:100%;padding-top:24px;">
+
+    <!-- 红心徽章 -->
+    <div style="display:flex;justify-content:center;margin-top:20px;">
+      <div style="width:76px;height:76px;border-radius:24px;background:rgba(232,93,93,.12);display:flex;align-items:center;justify-content:center;color:#E85D5D;">
+        <svg style="width:40px;height:40px"><use href="#i-heart"/></svg>
+      </div>
+    </div>
+
+    <!-- 标题 + 说明 -->
+    <div style="text-align:center;font-size:22px;font-weight:800;color:#2F3337;margin-top:22px;padding:0 6px;">允许小身体读取健康数据</div>
+    <div style="text-align:center;font-size:14px;color:#59606B;line-height:1.55;margin-top:10px;padding:0 8px;">小身体需要读取以下数据来建立你的个人基线与偏离分析</div>
+
+    <!-- 数据类型白卡 -->
+    <div class="bg-white egoshadow" style="border-radius:16px;padding:4px 16px;margin-top:24px;">
+      <!-- 心率 -->
+      <div style="display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #F0F0F0;">
+        <div style="width:34px;height:34px;border-radius:50%;background:rgba(240,107,107,.15);color:#F06B6B;display:flex;align-items:center;justify-content:center;"><svg style="width:19px;height:19px"><use href="#i-heart"/></svg></div>
+        <div style="flex:1;font-size:15px;color:#2F3337;">心率</div>
+      </div>
+      <!-- HRV -->
+      <div style="display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #F0F0F0;">
+        <div style="width:34px;height:34px;border-radius:50%;background:rgba(240,107,107,.15);color:#F06B6B;display:flex;align-items:center;justify-content:center;"><svg style="width:19px;height:19px"><use href="#i-wave"/></svg></div>
+        <div style="flex:1;font-size:15px;color:#2F3337;">心率变异性 HRV</div>
+      </div>
+      <!-- 静息心率 -->
+      <div style="display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #F0F0F0;">
+        <div style="width:34px;height:34px;border-radius:50%;background:rgba(75,200,126,.15);color:#4BC87E;display:flex;align-items:center;justify-content:center;"><svg style="width:19px;height:19px"><use href="#i-heart"/></svg></div>
+        <div style="flex:1;font-size:15px;color:#2F3337;">静息心率</div>
+      </div>
+      <!-- 睡眠 -->
+      <div style="display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #F0F0F0;">
+        <div style="width:34px;height:34px;border-radius:50%;background:rgba(245,166,35,.15);color:#F5A623;display:flex;align-items:center;justify-content:center;"><svg style="width:19px;height:19px"><use href="#i-moon"/></svg></div>
+        <div style="flex:1;font-size:15px;color:#2F3337;">睡眠</div>
+      </div>
+      <!-- 体能训练 / 运动 -->
+      <div style="display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #F0F0F0;">
+        <div style="width:34px;height:34px;border-radius:50%;background:rgba(34,190,197,.15);color:#22BEC5;display:flex;align-items:center;justify-content:center;"><svg style="width:19px;height:19px"><use href="#i-run"/></svg></div>
+        <div style="flex:1;font-size:15px;color:#2F3337;">体能训练 / 运动</div>
+      </div>
+      <!-- 体温 -->
+      <div style="display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #F0F0F0;">
+        <div style="width:34px;height:34px;border-radius:50%;background:rgba(245,166,35,.15);color:#F5A623;display:flex;align-items:center;justify-content:center;"><svg style="width:19px;height:19px"><use href="#i-flame"/></svg></div>
+        <div style="flex:1;font-size:15px;color:#2F3337;">体温</div>
+      </div>
+      <!-- 血氧 -->
+      <div style="display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #F0F0F0;">
+        <div style="width:34px;height:34px;border-radius:50%;background:rgba(168,141,232,.15);color:#A88DE8;display:flex;align-items:center;justify-content:center;"><svg style="width:19px;height:19px"><use href="#i-lungs"/></svg></div>
+        <div style="flex:1;font-size:15px;color:#2F3337;">血氧</div>
+      </div>
+      <!-- 步数 -->
+      <div style="display:flex;align-items:center;gap:12px;padding:13px 0;">
+        <div style="width:34px;height:34px;border-radius:50%;background:rgba(75,200,126,.15);color:#4BC87E;display:flex;align-items:center;justify-content:center;"><svg style="width:19px;height:19px"><use href="#i-bolt"/></svg></div>
+        <div style="flex:1;font-size:15px;color:#2F3337;">步数</div>
+      </div>
+    </div>
+
+    <div style="flex:1;min-height:24px;"></div>
+
+    <!-- 主按钮 + 次文字 -->
+    <div data-go="onb_profile" style="height:50px;border-radius:999px;background:#3C4FC1;color:#fff;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:22px;cursor:pointer;">
+      允许并继续
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:14px;color:#9AA09F;">
+      <svg style="width:14px;height:14px"><use href="#i-lock"/></svg>
+      <span style="font-size:12.5px;">数据仅在本机处理</span>
+    </div>
+
+  </div>
+</article>
+
+<!-- ③  补充资料 -->
+<article class="device" data-caption="补充资料 · 完善个人信息" data-nav="← 补充资料" data-tab="none" data-fab="false" data-theme="light" data-screen="onb_profile">
+  <div class="screen-pad fade" style="display:flex;flex-direction:column;min-height:100%;">
+
+    <div style="font-size:13.5px;color:#59606B;line-height:1.5;margin:6px 4px 4px;">完善这些信息，让分析更贴合你的身体</div>
+
+    <!-- 昵称 -->
+    <div style="margin-top:22px;">
+      <div style="font-size:15px;font-weight:600;color:#2F3337;margin:0 2px 8px;">昵称</div>
+      <div style="display:flex;align-items:center;height:52px;border-radius:14px;background:#EFEFEF;padding:0 16px;">
+        <span style="font-size:16px;color:#2F3337;flex:1;">宇威</span>
+      </div>
+    </div>
+
+    <!-- 性别 分段控件 -->
+    <div style="margin-top:22px;">
+      <div style="font-size:15px;font-weight:600;color:#2F3337;margin:0 2px 8px;">性别</div>
+      <div style="background:#EFEFEF;border-radius:12px;padding:3px;display:flex;">
+        <div style="flex:1;text-align:center;padding:10px 0;font-size:15px;font-weight:600;color:#2F3337;background:#fff;border-radius:9px;box-shadow:0 1px 3px rgba(0,0,0,.08);">男</div>
+        <div style="flex:1;text-align:center;padding:10px 0;font-size:15px;color:#7C838D;">女</div>
+      </div>
+    </div>
+
+    <!-- 生日 -->
+    <div style="margin-top:22px;">
+      <div style="font-size:15px;font-weight:600;color:#2F3337;margin:0 2px 8px;">生日</div>
+      <div style="display:flex;align-items:center;height:52px;border-radius:14px;background:#EFEFEF;padding:0 16px;">
+        <span style="font-size:16px;color:#2F3337;flex:1;">1998 / 03 / 22</span>
+        <svg style="width:16px;height:16px;color:#7C838D"><use href="#i-chevron-down"/></svg>
+      </div>
+    </div>
+
+    <!-- 身高 / 体重 -->
+    <div style="display:flex;gap:12px;margin-top:22px;">
+      <div style="flex:1;">
+        <div style="font-size:15px;font-weight:600;color:#2F3337;margin:0 2px 8px;">身高</div>
+        <div style="display:flex;align-items:baseline;height:52px;border-radius:14px;background:#EFEFEF;padding:0 16px;">
+          <span style="font-size:16px;color:#2F3337;flex:1;">176</span>
+          <span style="font-size:13px;color:#9AA09F;">cm</span>
+        </div>
+      </div>
+      <div style="flex:1;">
+        <div style="font-size:15px;font-weight:600;color:#2F3337;margin:0 2px 8px;">体重</div>
+        <div style="display:flex;align-items:baseline;height:52px;border-radius:14px;background:#EFEFEF;padding:0 16px;">
+          <span style="font-size:16px;color:#2F3337;flex:1;">68</span>
+          <span style="font-size:13px;color:#9AA09F;">kg</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="flex:1;min-height:32px;"></div>
+
+    <!-- 完成 -->
+    <div data-go="today" data-mode="reset" style="height:50px;border-radius:999px;background:#3C4FC1;color:#fff;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:20px;cursor:pointer;">
+      完成
+    </div>
+
+  </div>
+</article>

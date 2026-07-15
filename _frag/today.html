@@ -1,0 +1,74 @@
+<!-- 今日首页 (tab 根) —— 按真机截图复刻 -->
+<article class="device" data-screen="today" data-nav="none" data-tab="today" data-fab="true">
+  <div class="screen-pad" style="padding:8px 16px 120px;">
+    <!-- 顶栏：铃铛(白圆+红点) / 日历(白方) / 头像(圆) -->
+    <div style="display:flex;align-items:center;gap:10px;padding-top:4px;">
+      <div data-go="notif_center" style="position:relative;width:38px;height:38px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.05);display:flex;align-items:center;justify-content:center;color:#2F3337;cursor:pointer;">
+        <svg style="width:20px;height:20px"><use href="#i-bell"/></svg>
+        <span style="position:absolute;top:7px;right:8px;width:7px;height:7px;border-radius:50%;background:#E40000;border:1.5px solid #fff;"></span>
+      </div>
+      <div style="flex:1"></div>
+      <div style="width:38px;height:38px;border-radius:12px;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.05);display:flex;align-items:center;justify-content:center;color:#2F3337;">
+        <svg style="width:20px;height:20px"><use href="#i-calendar"/></svg>
+      </div>
+      <div data-go="profile" style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8FA0F5,#3C4FC1);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;overflow:hidden;">
+        <svg style="width:26px;height:26px;margin-top:4px"><use href="#i-user"/></svg>
+      </div>
+    </div>
+
+    <!-- 问候 -->
+    <div style="text-align:center;font-size:17px;color:#2F3337;margin-top:26px;">嗨~宇威！</div>
+    <!-- 一句话状态 -->
+    <div style="text-align:center;font-size:21px;font-weight:800;color:#2F3337;line-height:1.45;margin-top:12px;padding:0 6px;">
+      今天恢复比平时低一些，HRV 连续 <span style="color:#22BEC5">3天</span> 偏低，建议把强度降到 <span style="color:#22BEC5">6分</span>。
+    </div>
+
+    <!-- masonry：HRV大 | 睡眠大 | (运动/电量 竖排) -->
+    <div style="display:flex;gap:10px;margin-top:26px;align-items:stretch;">
+      <!-- HRV 大卡 → 证据对照 -->
+      <div data-go="evidence_hrv" style="flex:1;min-width:0;height:152px;background:#fff;border-radius:18px;padding:12px;display:flex;flex-direction:column;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,.06),0 0 0 .5px rgba(0,0,0,.02);">
+        <div style="width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,#FF8080,#F0555F);display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 3px 7px rgba(240,85,95,.32);"><svg style="width:17px;height:17px"><use href="#i-heart"/></svg></div>
+        <div style="font-size:14px;font-weight:700;color:#2F3337;margin-top:11px;">HRV</div>
+        <div style="font-size:21px;font-weight:800;color:#2F3337;margin-top:3px;line-height:1;">52<span style="font-size:13px">ms</span></div>
+        <div style="font-size:10.5px;color:#9AA09F;margin-top:5px;line-height:1.3;">连续 3 天低于基线</div>
+        <div style="flex:1"></div>
+        <div style="font-size:11.5px;font-weight:600;color:#F06B6B;">↓7ms 偏低</div>
+      </div>
+      <!-- 睡眠 大卡 → 睡眠趋势 -->
+      <div data-go="trend_sleep" style="flex:1;min-width:0;height:152px;background:#fff;border-radius:18px;padding:12px;display:flex;flex-direction:column;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,.06),0 0 0 .5px rgba(0,0,0,.02);">
+        <div style="width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,#FBB24C,#F59A2E);display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 3px 7px rgba(245,160,46,.32);"><svg style="width:17px;height:17px"><use href="#i-moon"/></svg></div>
+        <div style="font-size:14px;font-weight:700;color:#2F3337;margin-top:11px;">睡眠</div>
+        <div style="font-size:21px;font-weight:800;color:#2F3337;margin-top:3px;line-height:1;">7h25m</div>
+        <div style="font-size:10.5px;color:#9AA09F;margin-top:5px;line-height:1.3;">深睡占比偏低</div>
+        <div style="flex:1"></div>
+        <div style="font-size:11.5px;font-weight:600;color:#9AA09F;">持平基线</div>
+      </div>
+      <!-- 右列：运动 + 身体电量 -->
+      <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:10px;">
+        <div style="flex:1;background:#fff;border-radius:18px;padding:11px;display:flex;flex-direction:column;box-shadow:0 4px 10px rgba(0,0,0,.06),0 0 0 .5px rgba(0,0,0,.02);">
+          <div style="display:flex;align-items:center;gap:7px;">
+            <div style="width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#6BA5F5,#4B84EA);display:flex;align-items:center;justify-content:center;color:#fff;flex:none;box-shadow:0 3px 7px rgba(75,132,234,.3);"><svg style="width:15px;height:15px"><use href="#i-run"/></svg></div>
+            <div style="font-size:13px;font-weight:700;color:#2F3337;">运动</div>
+          </div>
+          <div style="font-size:16px;font-weight:800;color:#2F3337;margin-top:6px;">30min</div>
+          <div style="font-size:9.5px;color:#9AA09F;margin-top:2px;">跑步·ACWR1.1</div>
+        </div>
+        <div style="flex:1;background:#fff;border-radius:18px;padding:11px;display:flex;flex-direction:column;box-shadow:0 4px 10px rgba(0,0,0,.06),0 0 0 .5px rgba(0,0,0,.02);">
+          <div style="display:flex;align-items:center;gap:7px;">
+            <div style="width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#5FC0EC,#3FA9E0);display:flex;align-items:center;justify-content:center;color:#fff;flex:none;box-shadow:0 3px 7px rgba(63,169,224,.3);"><svg style="width:15px;height:15px"><use href="#i-battery"/></svg></div>
+            <div style="font-size:13px;font-weight:700;color:#2F3337;">电量</div>
+          </div>
+          <div style="font-size:16px;font-weight:800;color:#2F3337;margin-top:6px;">78</div>
+          <div style="font-size:9.5px;color:#4BC87E;margin-top:2px;font-weight:600;">充足</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 证据回放 白胶囊按钮 -->
+    <div data-go="evidence" style="display:flex;align-items:center;justify-content:center;gap:7px;background:#fff;border-radius:999px;padding:13px 18px;box-shadow:0 4px 10px rgba(0,0,0,.05);margin-top:26px;cursor:pointer;">
+      <svg viewBox="0 0 24 24" style="width:17px;height:17px;flex:none"><circle cx="12" cy="12" r="9" fill="#3C4FC1"/><rect x="11" y="10.5" width="2" height="6" rx="1" fill="#fff"/><circle cx="12" cy="7.8" r="1.3" fill="#fff"/></svg>
+      <span style="font-size:14px;font-weight:600;color:#2F3337;">查看全时段证据回放</span>
+      <svg style="width:15px;height:15px;color:#C0C4CC"><use href="#i-chevron"/></svg>
+    </div>
+  </div>
+</article>
